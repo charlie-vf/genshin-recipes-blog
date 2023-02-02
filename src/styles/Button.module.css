@@ -1,0 +1,61 @@
+/* Buttons will be changed at a later stage - this is to get them up and running */
+
+.Button {
+    font-size: 0.9rem;
+    align-self: center;
+    border-radius: 100px;
+    border-color: transparent;
+    padding: 4px 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    min-width: 75px;
+    background-color: #5091ca;
+}
+
+.Button:hover {
+    opacity: 0.8;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.Button:hover:active {
+    background-color: #0d4e87 !important;
+}
+
+.Button:active {
+    background-color: #0d4e87 !important;
+}
+
+.Button:focus {
+    background-color: #0d4e87;
+}
+
+.Wide {
+    padding: 10px 50px;
+    width: 100%;
+}
+
+/* .Blue,
+.BlueOutline:hover,
+.Bright:hover {
+    background-color: #0d4e87;
+    color: #ffffff;
+}
+
+.BlueOutline,
+.Blue:hover {
+    background-color: #ffffff;
+    color: #2142b2;
+}
+
+.Black,
+.BlackOutline:hover {
+    background-color: #0d4e87;
+    color: aliceblue;
+}
+
+.Black:hover,
+.BlackOutline {
+    background-color: aliceblue;
+    color: #242a3d;
+} */

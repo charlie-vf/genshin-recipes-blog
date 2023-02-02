@@ -8,6 +8,23 @@
     padding-top: 90px;
 }
 
+.Content {
+    background: rgb(220, 248, 255);
+    padding: 15px;
+    border-radius: 1px;
+    border: 2px solid #9fcdf5;
+}
+
+.SignFormImage {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+input[type="file"] {
+    display: none;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -21,7 +38,7 @@ a:hover {
     text-decoration: none;
 }
 
-a:hover i{
+a:hover i {
     color: #0d4e87;
     transition: color ease-in-out 0.4s;
 }
@@ -36,4 +53,26 @@ i:hover {
     cursor: pointer;
     color: #0d4e87;
     transition: color ease-in-out 0.4s;
+}
+
+figure {
+    text-align: center;
+    display: inline-block;
+}
+
+/* scrollbar */
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
