@@ -5,7 +5,7 @@
 }
 
 .Main {
-    padding-top: 80px;
+    padding-top: 90px;
 }
 
 * {
@@ -13,7 +13,7 @@
 }
 
 a {
-    color: #0d4e87;
+    color: #5091ca;
     transition: color ease-in-out 0.4s;
 }
 
@@ -22,7 +22,7 @@ a:hover {
 }
 
 a:hover i{
-    color: #136bb87d;
+    color: #0d4e87;
     transition: color ease-in-out 0.4s;
 }
 
@@ -34,6 +34,6 @@ i {
 
 i:hover {
     cursor: pointer;
-    color: #136bb87d;
+    color: #0d4e87;
     transition: color ease-in-out 0.4s;
 }
