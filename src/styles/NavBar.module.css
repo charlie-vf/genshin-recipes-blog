@@ -1,0 +1,8 @@
+.NavBar {
+    background-color: aliceblue;
+    border: 2px solid #9fcdf5;
+}
+
+.NavLink {
+    padding: 5px;
+}
