@@ -8,11 +8,14 @@ import styles from '../styles/NavBar.module.css'
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 import Avatar from './Avatar';
 import axios from 'axios';
+import useBurgerToggle from '../hooks/useBurgerToggle';
 
 const NavBar = () => {
 
     const currentUser = useCurrentUser();
     const setCurrentUser = useSetCurrentUser();
+
+    const { expanded, setExpanded, ref } = useBurgerToggle();
 
     const handleSignOut = async () => {
         try {
@@ -94,6 +97,7 @@ const NavBar = () => {
     return (
         <Navbar
             className={styles.NavBar}
+            expanded={expanded}
             expand="md"
             fixed="top"
         >
@@ -105,7 +109,11 @@ const NavBar = () => {
                     </Navbar.Brand>
                 </NavLink>
                 {currentUser && createRecipeIcon}
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Toggle
+                    ref={ref}
+                    onClick={() => setExpanded(!expanded)}
+                    aria-controls="basic-navbar-nav"
+                />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
                         <NavLink
