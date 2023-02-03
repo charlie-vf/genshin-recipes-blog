@@ -6,48 +6,45 @@ import { Route, Switch } from 'react-router-dom';
 import './api/axiosDefaults'
 import SignUpForm from './pages/auth/SignUpForm';
 import SignInForm from './pages/auth/SignInForm';
-import { useState } from 'react';
 
 function App() {
 
-  const [currentUser, setCurrentUser] = useState(null)
-
   return (
-    <div className={styles.App}>
-      <NavBar />
-      <Container className={styles.Main}>
-        <Switch>
-          <Route
-            exact
-            path='/'
-            render={() => <h1>Test home</h1>}
-          />
-          <Route
-            exact
-            path='/favourites'
-            render={() => <h1>Test favourites</h1>}
-          />
-          <Route
-            exact
-            path='/following'
-            render={() => <h1>Test following</h1>}
-          />
-          <Route
-            exact
-            path='/signin'
-            render={() => <SignInForm />}
-          />
-          <Route
-            exact
-            path='/signup'
-            render={() => <SignUpForm />}
-          />
-          <Route
-            render={() => <p>Page not found!</p>}
-          />
-        </Switch>
-      </Container>
-    </div>
+        <div className={styles.App}>
+          <NavBar />
+          <Container className={styles.Main}>
+            <Switch>
+              <Route
+                exact
+                path='/'
+                render={() => <h1>Test home</h1>}
+              />
+              <Route
+                exact
+                path='/favourites'
+                render={() => <h1>Test favourites</h1>}
+              />
+              <Route
+                exact
+                path='/following'
+                render={() => <h1>Test following</h1>}
+              />
+              <Route
+                exact
+                path='/signin'
+                render={() => <SignInForm />}
+              />
+              <Route
+                exact
+                path='/signup'
+                render={() => <SignUpForm />}
+              />
+              <Route
+                render={() => <p>Page not found!</p>}
+              />
+            </Switch>
+          </Container>
+        </div>
   );
 }
 

@@ -5,8 +5,35 @@ import Container from 'react-bootstrap/Container'
 import { NavLink } from 'react-router-dom';
 import logo from "../assets/ei-miko-cooking.png";
 import styles from '../styles/NavBar.module.css'
+import { useCurrentUser } from '../contexts/CurrentUserContext';
 
 const NavBar = () => {
+
+    const currentUser = useCurrentUser();
+
+    const loggedInIcons = <>{currentUser?.username}</>
+
+    const loggedOutIcons = (
+        <>
+            <NavLink
+                to="/signin"
+                className={styles.NavLink}
+                activeClassName={styles.Active}
+            >
+                <i className="fas fa-sign-in-alt"></i>
+                Sign In
+            </NavLink>
+            <NavLink
+                to="/signup"
+                className={styles.NavLink}
+                activeClassName={styles.Active}
+            >
+                <i className="fas fa-user-plus"></i>
+                Sign Up
+            </NavLink>
+        </>
+    )
+
     return (
         <Navbar
             className={styles.NavBar}
@@ -49,28 +76,13 @@ const NavBar = () => {
                             Following
                         </NavLink>
                         <NavLink
-                            to="/signin"
-                            className={styles.NavLink}
-                            activeClassName={styles.Active}
-                        >
-                            <i className="fas fa-sign-in-alt"></i>
-                            Sign In
-                        </NavLink>
-                        <NavLink
-                            to="/signup"
-                            className={styles.NavLink}
-                            activeClassName={styles.Active}
-                        >
-                            <i className="fas fa-user-plus"></i>
-                            Sign Up
-                        </NavLink>
-                        <NavLink
                             to="/"
                             className={styles.NavLink}
                             activeClassName={styles.Active}
                         >
                             Profile
                         </NavLink>
+                        {currentUser ? loggedInIcons : loggedOutIcons}
                     </Nav>
                 </Navbar.Collapse>
             </Container>

@@ -14,7 +14,7 @@ import { Link, useHistory } from "react-router-dom";
 import styles from "../../styles/SignForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
-// import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 // import { useRedirect } from "../../hooks/useRedirect";
 // import { setTokenTimestamp } from "../../utils/utils";
 
@@ -22,7 +22,7 @@ import logo from "/workspace/genshin-recipes-blog/src/assets/ei-miko-cooking.png
 
 function SignInForm() {
 
-    // const setCurrentUser = useSetCurrentUser();
+    const setCurrentUser = useSetCurrentUser();
 
     // redirect users away from this page if already logged in
     // useRedirect('loggedIn')
@@ -41,7 +41,7 @@ function SignInForm() {
 
         try {
             const { data } = await axios.post("/dj-rest-auth/login/", signInData);
-            // setCurrentUser(data.user);
+            setCurrentUser(data.user);
             // setTokenTimestamp(data);
             // send user back to previous page upon successful sign in
             history.goBack();
