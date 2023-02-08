@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -14,6 +14,8 @@ import styles from "../../styles/RecipeForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Asset from "../../components/Asset";
+import { useHistory } from "react-router";
+import { axiosReq } from "../../api/axiosDefaults";
 
 function RecipeCreateForm() {
 
@@ -27,6 +29,10 @@ function RecipeCreateForm() {
     })
 
     const { title, ingredients, method, image } = postData;
+
+    const imageInput = useRef(null);
+
+    const history = useHistory();
 
     const handleChange = (e) => {
         setPostData({
@@ -42,6 +48,26 @@ function RecipeCreateForm() {
                 ...postData,
                 image: URL.createObjectURL(e.target.files[0]),
             });
+        }
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const formData = new FormData();
+
+        formData.append("title", title);
+        formData.append("ingredients", ingredients);
+        formData.append("method", method);
+        formData.append("image", imageInput.current.files[0]);
+
+        try {
+            const { data } = await axiosReq.post("/recipes/", formData);
+            history.push(`/recipes/${data.id}`);
+        } catch (err) {
+            // console.log(err)
+            if (err.response?.status !== 401) {
+                setErrors(err.response?.data);
+            }
         }
     };
 
@@ -85,14 +111,17 @@ function RecipeCreateForm() {
             >
                 cancel
             </Button>
-            <Button className={btnStyles.Button} type="submit">
+            <Button
+                className={btnStyles.Button}
+                type="submit"
+            >
                 create
             </Button>
         </div>
     );
 
     return (
-        <Form>
+        <Form onSubmit={handleSubmit}>
             <Row>
                 <Col className="py-2 p-0 p-md-2" md={4} lg={5}>
                     <Container
@@ -133,6 +162,7 @@ function RecipeCreateForm() {
                                 id="image-upload"
                                 accept="image/*"
                                 onChange={handleChangeImage}
+                                ref={imageInput}
                             />
                         </Form.Group>
                     </Container>
