@@ -18,7 +18,7 @@ import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 // import { useRedirect } from "../../hooks/useRedirect";
 // import { setTokenTimestamp } from "../../utils/utils";
 
-import logo from "/workspace/genshin-recipes-blog/src/assets/ei-miko-cooking.png";
+import logo from "../../assets/ei-miko-cooking.png";
 
 function SignInForm() {
 
@@ -100,7 +100,7 @@ function SignInForm() {
                             className={`${btnStyles.Button} ${btnStyles.Wide}`}
                             type="submit"
                         >
-                            Sign in
+                            sign in
                         </Button>
                         {errors.non_field_errors?.map((message, idx) => (
                             <Alert key={idx} variant="warning" className="mt-3">
@@ -111,7 +111,7 @@ function SignInForm() {
                 </Container>
                 <Container className={`mt-3 ${appStyles.Content}`}>
                     <Link className={styles.Link} to="/signup">
-                        Don't have an account? <span>Sign up now!</span>
+                        No account, yet? <span>Join us and start sharing!</span>
                     </Link>
                 </Container>
             </Col>
