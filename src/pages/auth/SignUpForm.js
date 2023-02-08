@@ -15,7 +15,7 @@ import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import Alert from "react-bootstrap/Alert";
 
-import logo from "/workspace/genshin-recipes-blog/src/assets/ei-miko-cooking.png";
+import logo from "../../assets/ei-miko-cooking.png";
 import axios from "axios";
 
 const SignUpForm = () => {
