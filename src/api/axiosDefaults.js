@@ -1,6 +1,6 @@
 import axios from "axios";
 
-axios.defaults.baseURL = 'https://genshin-recipes-blog.herokuapp.com/';
+axios.defaults.baseURL = 'https://genshin-food-blog-api.herokuapp.com/';
 axios.defaults.headers.post['Content-Type'] = 'multipart/form-data'
 axios.defaults.withCredentials = true
 
