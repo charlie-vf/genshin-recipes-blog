@@ -2,6 +2,7 @@
 
 .Button {
     font-size: 0.9rem;
+    color: white;
     align-self: center;
     border-radius: 100px;
     border-color: transparent;
@@ -34,28 +35,3 @@
     padding: 10px 50px;
     width: 100%;
 }
-
-/* .Blue,
-.BlueOutline:hover,
-.Bright:hover {
-    background-color: #0d4e87;
-    color: #ffffff;
-}
-
-.BlueOutline,
-.Blue:hover {
-    background-color: #ffffff;
-    color: #2142b2;
-}
-
-.Black,
-.BlackOutline:hover {
-    background-color: #0d4e87;
-    color: aliceblue;
-}
-
-.Black:hover,
-.BlackOutline {
-    background-color: aliceblue;
-    color: #242a3d;
-} */

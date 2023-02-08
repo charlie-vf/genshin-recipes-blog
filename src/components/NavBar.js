@@ -32,7 +32,7 @@ const NavBar = () => {
             className={styles.NavLink}
             activeClassName={styles.Active}
         >
-            <i className="fa-regular fa-book"></i>
+            <i className="fa-solid fa-feather-pointed"></i>
             Create Recipe
         </NavLink>
     )
@@ -68,7 +68,6 @@ const NavBar = () => {
                 className={styles.NavLink}
             >
                 <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
-                Profile
             </NavLink>
         </>
     )
