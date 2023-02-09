@@ -24,14 +24,14 @@ function App() {
               <Route
                 exact
                 path='/'
-                render={() => <AllRecipes message='No results. Please adjust your search.'/>}
+                render={() => <AllRecipes message='Nothing here. Adjust your search.'/>}
               />
               <Route
                 exact
                 path='/favourites'
                 render={() => (
                   <AllRecipes
-                    message='No results. Please adjust your search or like a recipe.'
+                    message='Nothing here. Adjust your search or like a recipe.'
                     filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
                   />
                 )}
@@ -41,7 +41,7 @@ function App() {
                 path='/made'
                 render={() => (
                   <AllRecipes
-                    message='No results. Please adjust your search or mark a recipe as made.'
+                    message='Nothing here. Adjust your search or mark a recipe as made.'
                     filter={`made__owner__profile=${profile_id}&ordering=-made__created_at&`}
                   />
                 )}
@@ -51,7 +51,7 @@ function App() {
                 path='/following'
                 render={() => (
                   <AllRecipes
-                    message='No results. Please adjust your search or follow a creator.'
+                    message='Nothing here. Adjust your search or follow a creator.'
                     filter={`owner__followed__owner__profile=${profile_id}&`}
                   />
                 )}
