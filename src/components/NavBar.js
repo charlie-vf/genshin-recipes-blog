@@ -58,6 +58,14 @@ const NavBar = () => {
                 Favourites
             </NavLink>
             <NavLink
+                to="/made"
+                className={styles.NavLink}
+                activeClassName={styles.Active}
+            >
+                <i className="fa-solid fa-bowl-food"></i>
+                Made
+            </NavLink>
+            <NavLink
                 to="/"
                 className={styles.NavLink}
                 onClick={handleSignOut}
@@ -117,7 +125,7 @@ const NavBar = () => {
                 />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
-                        <NavLink
+                        {/* <NavLink
                             exact
                             to="/"
                             className={styles.NavLink}
@@ -125,7 +133,7 @@ const NavBar = () => {
                         >
                             <i className="fas fa-home"></i>
                             Home
-                        </NavLink>
+                        </NavLink> */}
 
                         {currentUser ? loggedInIcons : loggedOutIcons}
                     </Nav>

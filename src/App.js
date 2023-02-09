@@ -8,8 +8,13 @@ import SignUpForm from './pages/auth/SignUpForm';
 import SignInForm from './pages/auth/SignInForm';
 import RecipeCreateForm from './pages/recipes/RecipeCreateForm';
 import RecipePage from './pages/recipes/RecipePage';
+import AllRecipes from './pages/recipes/AllRecipes';
+import { useCurrentUser } from './contexts/CurrentUserContext';
 
 function App() {
+
+  const currentUser = useCurrentUser();
+  const profile_id = currentUser?.profile_id || '';
 
   return (
         <div className={styles.App}>
@@ -19,17 +24,37 @@ function App() {
               <Route
                 exact
                 path='/'
-                render={() => <h1>Test home</h1>}
+                render={() => <AllRecipes message='No results. Please adjust your search.'/>}
               />
               <Route
                 exact
                 path='/favourites'
-                render={() => <h1>Test favourites</h1>}
+                render={() => (
+                  <AllRecipes
+                    message='No results. Please adjust your search or like a recipe.'
+                    filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
+                  />
+                )}
+              />
+              <Route
+                exact
+                path='/made'
+                render={() => (
+                  <AllRecipes
+                    message='No results. Please adjust your search or mark a recipe as made.'
+                    filter={`made__owner__profile=${profile_id}&ordering=-made__created_at&`}
+                  />
+                )}
               />
               <Route
                 exact
                 path='/following'
-                render={() => <h1>Test following</h1>}
+                render={() => (
+                  <AllRecipes
+                    message='No results. Please adjust your search or follow a creator.'
+                    filter={`owner__followed__owner__profile=${profile_id}&`}
+                  />
+                )}
               />
               <Route
                 exact
