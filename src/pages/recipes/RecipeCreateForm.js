@@ -16,6 +16,7 @@ import btnStyles from "../../styles/Button.module.css";
 import Asset from "../../components/Asset";
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
+import { Alert } from "react-bootstrap";
 
 function RecipeCreateForm() {
 
@@ -61,6 +62,8 @@ function RecipeCreateForm() {
         formData.append("image", imageInput.current.files[0]);
 
         try {
+            // CHANGED: removed / after /recipes
+            // may need to add this back in
             const { data } = await axiosReq.post("/recipes/", formData);
             history.push(`/recipes/${data.id}`);
         } catch (err) {
@@ -82,6 +85,11 @@ function RecipeCreateForm() {
                     onChange={handleChange}
                 />
             </Form.Group>
+            {errors?.title?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                    {message}
+                </Alert>
+            ))}
             <Form.Group>
                 <Form.Label>Ingredients</Form.Label>
                 <Form.Control
@@ -92,6 +100,11 @@ function RecipeCreateForm() {
                     onChange={handleChange}
                 />
             </Form.Group>
+            {errors?.ingredients?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                    {message}
+                </Alert>
+            ))}
             <Form.Group>
                 <Form.Label>Method</Form.Label>
                 <Form.Control
@@ -102,12 +115,17 @@ function RecipeCreateForm() {
                     onChange={handleChange}
                 />
             </Form.Group>
+            {errors?.method?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                    {message}
+                </Alert>
+            ))}
 
 
 
             <Button
                 className={btnStyles.Button}
-                onClick={() => { }}
+                onClick={() => history.goBack()}
             >
                 cancel
             </Button>
@@ -121,7 +139,7 @@ function RecipeCreateForm() {
     );
 
     return (
-        <Form onSubmit={handleSubmit}>
+        <Form method='POST' onSubmit={handleSubmit}>
             <Row>
                 <Col className="py-2 p-0 p-md-2" md={4} lg={5}>
                     <Container
