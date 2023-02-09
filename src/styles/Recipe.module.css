@@ -1,0 +1,24 @@
+.Recipe {
+    background-color: #9fcdf5;
+    border: 1px solid #5091ca;
+    border-radius: 2px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.Recipe figure,
+h5 {
+    margin: 0 0;
+}
+
+.Icon {
+    color: #0d4e87;
+}
+
+.Icon:hover {
+    color: #0d1787;
+}
+
+.IconOutline:hover {
+    color: #0d4e87;
+}
