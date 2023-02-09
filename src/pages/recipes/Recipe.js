@@ -6,6 +6,8 @@ import { Media, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Avatar from '../../components/Avatar';
 
+import { axiosRes } from "../../api/axiosDefaults";
+
 const Recipe = (props) => {
 
     const {
@@ -29,6 +31,71 @@ const Recipe = (props) => {
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
+
+    const handleLike = async () => {
+        try {
+            const { data } = await axiosRes.post("/likes/", { recipe: id });
+            setRecipes((prevRecipes) => ({
+                ...prevRecipes,
+                results: prevRecipes.results.map((recipe) => {
+                    return recipe.id === id
+                        ? { ...recipe, likes_count: recipe.likes_count + 1, like_id: data.id }
+                        : recipe;
+                }),
+            }));
+        } catch (err) {
+            // console.log(err);
+        }
+    };
+
+    const handleUnlike = async () => {
+        try {
+            await axiosRes.delete(`/likes/${like_id}/`);
+            setRecipes((prevRecipes) => ({
+                ...prevRecipes,
+                results: prevRecipes.results.map((recipe) => {
+                    return recipe.id === id
+                        ? { ...recipe, likes_count: recipe.likes_count - 1, like_id: null }
+                        : recipe;
+                }),
+            }));
+        } catch (err) {
+            // console.log(err);
+        }
+    };
+
+
+    const handleMade = async () => {
+        try {
+            const { data } = await axiosRes.post("/made/", { recipe: id });
+            setRecipes((prevRecipes) => ({
+                ...prevRecipes,
+                results: prevRecipes.results.map((recipe) => {
+                    return recipe.id === id
+                        ? { ...recipe, made: recipe.made_count + 1, made_id: data.id }
+                        : recipe;
+                }),
+            }));
+        } catch (err) {
+            // console.log(err);
+        }
+    };
+
+    const handleUnmade = async () => {
+        try {
+            await axiosRes.delete(`/made/${made_id}/`);
+            setRecipes((prevRecipes) => ({
+                ...prevRecipes,
+                results: prevRecipes.results.map((recipe) => {
+                    return recipe.id === id
+                        ? { ...recipe, made_count: recipe.made_count - 1, made_id: null }
+                        : recipe;
+                }),
+            }));
+        } catch (err) {
+            // console.log(err);
+        }
+    };
 
     return (
         <Card className={styles.Recipe}>
@@ -59,11 +126,11 @@ const Recipe = (props) => {
                             <i className="far fa-heart" />
                         </OverlayTrigger>
                     ) : like_id ? (
-                        <span onClick={()=>{}}>
+                        <span onClick={handleUnlike}>
                             <i className={`fas fa-heart ${styles.Icon}`} />
                         </span>
                     ) : currentUser ? (
-                        <span onClick={()=>{}}>
+                        <span onClick={handleLike}>
                             <i className={`far fa-heart ${styles.IconOutline}`} />
                         </span>
                     ) : (
@@ -76,11 +143,11 @@ const Recipe = (props) => {
                     )}
                     {likes_count}
                     {made_id ? (
-                        <span onClick={()=>{}}>
+                        <span onClick={handleUnmade}>
                             <i className={`fa-solid fa-bowl-food ${styles.Icon}`} />
                         </span>
                     ) : currentUser ? (
-                        <span onClick={()=>{}}>
+                        <span onClick={handleMade}>
                             <i className={`fa-solid fa-bowl-food ${styles.IconOutline}`} />
                         </span>
                     ) : (
