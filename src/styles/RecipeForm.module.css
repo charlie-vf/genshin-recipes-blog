@@ -1,3 +1,5 @@
 .Container {
     min-height: 343px;
+    overflow: hidden;
+    object-fit: cover;
 }

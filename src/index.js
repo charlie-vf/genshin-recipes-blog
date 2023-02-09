@@ -6,14 +6,14 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { CurrentUserProvider } from './contexts/CurrentUserContext';
 
+// testing removal of <React.StrictMode></React.StrictMode>
+
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <CurrentUserProvider>
-        <App />
-      </CurrentUserProvider>
-    </Router>
-  </React.StrictMode>,
+  <Router>
+    <CurrentUserProvider>
+      <App />
+    </CurrentUserProvider>
+  </Router>,
   document.getElementById('root')
 );
 

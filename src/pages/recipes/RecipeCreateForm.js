@@ -150,7 +150,7 @@ function RecipeCreateForm() {
                                 <>
                                     <figure>
                                         <Image
-                                            className={appStyles.Image}
+                                            className={appStyles.SignFormImage}
                                             src={image}
                                             rounded
                                         />

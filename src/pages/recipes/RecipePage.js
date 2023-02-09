@@ -36,8 +36,7 @@ function RecipePage() {
             </Col>
             <Col className="py-2 p-0 p-lg-2" lg={8}>
                 {/* commenting out until i fix the api */}
-                {/* <Recipe {...recipe.results[0]} setRecipes={setRecipe} recipePage/> */}
-                recipe
+                <Recipe {...recipe.results[0]} setRecipes={setRecipe} recipePage/>
                 <Container className={appStyles.Content}>
                     Comments
                 </Container>

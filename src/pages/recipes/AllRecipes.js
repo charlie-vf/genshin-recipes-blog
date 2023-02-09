@@ -14,12 +14,12 @@ import Recipe from "./Recipe";
 import NoResults from "../../assets/noresults.png";
 import Asset from "../../components/Asset";
 
-function AllRecipes({message, filter=''}) {
+function AllRecipes({ message, filter = '' }) {
 
-    const [recipes, setRecipes] = useState({results: []});
+    const [recipes, setRecipes] = useState({ results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
     const {pathname} = useLocation();
-    const [search, setSearch] = useState();
+    const [search, setSearch] = useState('');
 
     useEffect(() => {
         const fetchRecipes = async () => {
