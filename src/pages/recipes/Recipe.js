@@ -144,18 +144,18 @@ const Recipe = (props) => {
                     {likes_count}
                     {made_id ? (
                         <span onClick={handleUnmade}>
-                            <i className={`fa-solid fa-bowl-food ${styles.Icon}`} />
+                            <i className={`fa-solid fa-bowl-rice ${styles.Icon}`} />
                         </span>
                     ) : currentUser ? (
                         <span onClick={handleMade}>
-                            <i className={`fa-solid fa-bowl-food ${styles.IconOutline}`} />
+                            <i className={`fa-solid fa-bowl-rice ${styles.IconOutline}`} />
                         </span>
                     ) : (
                         <OverlayTrigger
                             placement="top"
                             overlay={<Tooltip>Log in to mark recipes as made!</Tooltip>}
                         >
-                            <i className="fa-solid fa-bowl-food" />
+                            <i className="fa-solid fa-bowl-rice" />
                         </OverlayTrigger>
                     )}
                     {made_count}

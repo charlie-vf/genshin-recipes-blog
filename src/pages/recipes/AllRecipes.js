@@ -19,11 +19,12 @@ function AllRecipes({message, filter=''}) {
     const [recipes, setRecipes] = useState({results: []});
     const [hasLoaded, setHasLoaded] = useState(false);
     const {pathname} = useLocation();
+    const [search, setSearch] = useState();
 
     useEffect(() => {
         const fetchRecipes = async () => {
             try {
-                const {data} = await axiosReq.get(`/recipes/?${filter}`)
+                const {data} = await axiosReq.get(`/recipes/?${filter}search=${search}`);
                 setRecipes(data)
                 setHasLoaded(true)
             } catch(err) {
@@ -32,9 +33,14 @@ function AllRecipes({message, filter=''}) {
         };
 
         setHasLoaded(false);
-        fetchRecipes();
+        const timer = setTimeout(() => {
+            fetchRecipes();
+        }, 1000)
+        return () => {
+            clearTimeout(timer)
+        }
 
-    }, [filter, pathname]);
+    }, [filter, search, pathname]);
 
     return (
         <Row className="h-100">
@@ -42,6 +48,22 @@ function AllRecipes({message, filter=''}) {
                 <p>Popular recipes</p>
             </Col>
             <Col className="py-2 p-0 p-lg-2" lg={8}>
+                <i className={`fa-solid fa-eye ${styles.SearchIcon}`}/>
+                <Form
+                    className={styles.SearchBar}
+                    onSubmit={(e) => e.preventDefault()}    
+                >
+                    <Form.Control
+                        className='mr-sm-2'
+                        type='text'
+                        placeholder='search by creator or recipe'
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                    >
+
+                    </Form.Control>
+                </Form>
+
                 {hasLoaded ? (
                     <>
                         {recipes.results.length
