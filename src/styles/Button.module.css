@@ -13,6 +13,18 @@
     background-color: #5091ca;
 }
 
+.ButtonFollow {
+    font-size: 0.9rem;
+    text-align: center;
+    border-radius: 100px;
+    border-color: transparent;
+    padding: 1px 7px;
+    margin-left: 8px;
+    max-width: 25px;
+    max-height: 25px;
+    background-color: #5091ca;
+}
+
 .Button:hover {
     opacity: 0.8;
     border-color: transparent;
@@ -34,4 +46,21 @@
 .Wide {
     padding: 10px 50px;
     width: 100%;
+}
+
+.Follow,
+.Unfollow:hover {
+    /* background-color: #242a3d;
+  color: white; */
+    background-color: #9fcdf5;
+    color: #5091ca;
+}
+
+.Follow:hover,
+.Unfollow {
+    /* background-color: #dadadf;
+  color: #242a3d;
+  border-color: #242a3d; */
+    background-color: #5091ca;
+    color: #9fcdf5;
 }

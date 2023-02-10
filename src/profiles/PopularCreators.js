@@ -4,6 +4,7 @@ import { axiosReq } from '../api/axiosDefaults';
 import appStyles from '../App.module.css'
 import Asset from '../components/Asset';
 import { useCurrentUser } from '../contexts/CurrentUserContext';
+import Profile from './Profile';
 
 const PopularCreators = ({ mobile }) => {
 
@@ -44,12 +45,19 @@ const PopularCreators = ({ mobile }) => {
                     {mobile ? (
                         <div className="d-flex justify-content-around">
                             {popularCreators.results.slice(0, 4).map((profile) => (
-                                <p key={profile.id}>{profile.owner}</p>
+                                <Profile
+                                    key={profile.id}
+                                    profile={profile}
+                                    mobile
+                                />
                             ))}
                         </div>
                     ) : (
                         popularCreators.results.map((profile) => (
-                            <p key={profile.id}>{profile.owner}</p>
+                            <Profile
+                                key={profile.id}
+                                profile={profile}
+                            />
                         ))
                     )}
                 </>
