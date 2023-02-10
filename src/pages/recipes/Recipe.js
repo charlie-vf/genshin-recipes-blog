@@ -184,7 +184,7 @@ const Recipe = (props) => {
                     )}
                     {made_count}
                     <Link to={`/recipes/${id}`}>
-                        <i className="far fa-comments" />
+                        <i className={`far fa-comments ${styles.Icon}`} />
                     </Link>
                     {comments_count}
                 </div>
