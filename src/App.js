@@ -10,6 +10,7 @@ import RecipeCreateForm from './pages/recipes/RecipeCreateForm';
 import RecipePage from './pages/recipes/RecipePage';
 import AllRecipes from './pages/recipes/AllRecipes';
 import { useCurrentUser } from './contexts/CurrentUserContext';
+import RecipeEditForm from './pages/recipes/RecipeEditForm';
 
 function App() {
 
@@ -76,6 +77,10 @@ function App() {
                 exact
                 path='/recipes/:id'
                 render={() => <RecipePage />}
+              />
+              <Route
+                exact path="/recipes/:id/edit"
+                render={() => <RecipeEditForm />}
               />
               <Route
                 render={() => <p>Page not found!</p>}

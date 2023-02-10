@@ -138,8 +138,9 @@ const Recipe = (props) => {
             </Link>
             <Card.Body>
                 {title && <Card.Title className='text-center'>{title}</Card.Title>}
-                {ingredients && <Card.Title>{ingredients}</Card.Title>}
-                {method && <Card.Title>{method}</Card.Title>}
+                <hr/>
+                {ingredients && <Card.Title>Ingredients<hr/><p>{ingredients}</p></Card.Title>}
+                {method && <Card.Title>Method<hr/><p>{method}</p></Card.Title>}
                 <div className={styles.PostBar}>
                     {is_owner ? (
                         <OverlayTrigger
