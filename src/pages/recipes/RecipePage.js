@@ -11,6 +11,9 @@ import Recipe from "./Recipe";
 import CommentCreateForm from "../comments/CommentCreateForm.js";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import Comments from "../comments/Comment";
+import InfiniteScroll from "react-infinite-scroll-component";
+import Asset from "../../components/Asset";
+import { fetchMoreData } from "../../utils/utils";
 
 
 function RecipePage() {
@@ -57,14 +60,20 @@ function RecipePage() {
                         "Comments"
                     ) : null}
                     {comments.results.length ? (
-                        comments.results.map(comment => (
-                            <Comments
-                                key={comment.id}
-                                {...comment}
-                                setRecipe={setRecipe}
-                                setComments={setComments}
-                            />
-                        ))
+                        <InfiniteScroll
+                            children={comments.results.map(comment => (
+                                <Comments
+                                    key={comment.id}
+                                    {...comment}
+                                    setRecipe={setRecipe}
+                                    setComments={setComments}
+                                />
+                            ))}
+                            dataLength={comments.results.length}
+                            loader={<Asset spinner/>}
+                            hasMore={!!comments.next}
+                            next={() => fetchMoreData(comments, setComments)}
+                        />
                     ) : currentUser ? (
                         <span>No comments yet. Want to be the first?</span>
                     ) : (
