@@ -1,4 +1,4 @@
-import styles from "../styles/MoreRecipeDropdown.module.css";
+import styles from "../styles/EditDeleteDropdown.module.css";
 import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 
@@ -14,7 +14,7 @@ const CustomToggle = React.forwardRef(({ onClick }, ref) => (
     />
 ));
 
-export const MoreRecipeDropdown = ({ handleEdit, handleDelete }) => {
+export const EditDeleteDropdown = ({ handleEdit, handleDelete }) => {
 
     return (
         <Dropdown

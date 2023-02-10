@@ -2,12 +2,14 @@ import React from 'react'
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import styles from "../../styles/Recipe.module.css";
 import Card from "react-bootstrap/Card";
-import { Media, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import Media from 'react-bootstrap/Media';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 import { Link } from 'react-router-dom';
 import Avatar from '../../components/Avatar';
 
 import { axiosRes } from "../../api/axiosDefaults";
-import { MoreRecipeDropdown } from '../../components/MoreRecipeDropdown';
+import { EditDeleteDropdown } from '../../components/EditDeleteDropdown';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Recipe = (props) => {
@@ -125,7 +127,7 @@ const Recipe = (props) => {
                     <div className='d-flex align-items-center'>
                         <span>{updated_at}</span>
                         {is_owner && recipePage && 
-                            <MoreRecipeDropdown
+                            <EditDeleteDropdown
                                 handleEdit={handleEdit}
                                 handleDelete={handleDelete}
                             />

@@ -58,7 +58,12 @@ function RecipePage() {
                     ) : null}
                     {comments.results.length ? (
                         comments.results.map(comment => (
-                            <Comments key={comment.id} {...comment}/>
+                            <Comments
+                                key={comment.id}
+                                {...comment}
+                                setRecipe={setRecipe}
+                                setComments={setComments}
+                            />
                         ))
                     ) : currentUser ? (
                         <span>No comments yet. Want to be the first?</span>
