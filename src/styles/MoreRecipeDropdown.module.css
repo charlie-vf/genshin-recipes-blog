@@ -2,6 +2,11 @@
     display: inline-block;
     max-width: 50%;
     padding: 0px;
+    color: #5091ca;
+}
+
+.Toggle {
+    color: #5091ca
 }
 
 .Absolute {
