@@ -5,13 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { CurrentUserProvider } from './contexts/CurrentUserContext';
+import { ProfileDataProvider } from './contexts/ProfileDataContext';
 
 // testing removal of <React.StrictMode></React.StrictMode>
 
 ReactDOM.render(
   <Router>
     <CurrentUserProvider>
-      <App />
+      <ProfileDataProvider>
+        <App />
+      </ProfileDataProvider>
     </CurrentUserProvider>
   </Router>,
   document.getElementById('root')

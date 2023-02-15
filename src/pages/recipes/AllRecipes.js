@@ -16,6 +16,7 @@ import Asset from "../../components/Asset";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularCreators from "../../profiles/PopularCreators";
+import PopularRecipes from "./PopularRecipes";
 
 function AllRecipes({ message, filter = '' }) {
 
@@ -48,7 +49,7 @@ function AllRecipes({ message, filter = '' }) {
     return (
         <Row className="h-100">
             <Col lg={2} className="d-none d-lg-block p-0 p-lg-2">
-                <p>Popular recipes</p>
+                <PopularRecipes />
             </Col>
             <Col lg={8} className="d-lg-none p-0 p-lg-2">
                 <PopularCreators mobile />
@@ -100,7 +101,7 @@ function AllRecipes({ message, filter = '' }) {
                     </Container>
                 )}
             </Col>
-            <Col lg={2} className="d-none d-lg-block p-0 p-lg-2">
+            <Col lg={2} className="d-none d-lg-block p-0">
                 <PopularCreators />
             </Col>
         </Row>
