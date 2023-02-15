@@ -5,8 +5,18 @@
     color: #5091ca;
 }
 
+.Item {
+    max-width: 50%;
+    padding: 0px;
+    color: #5091ca;
+}
+
+.Background {
+    background-color: aliceblue;
+}
+
 .Toggle {
-    color: #5091ca
+    color: #5091ca;
 }
 
 .Absolute {

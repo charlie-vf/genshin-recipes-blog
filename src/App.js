@@ -12,6 +12,9 @@ import AllRecipes from './pages/recipes/AllRecipes';
 import { useCurrentUser } from './contexts/CurrentUserContext';
 import RecipeEditForm from './pages/recipes/RecipeEditForm';
 import ProfilePage from './profiles/ProfilePage';
+import UsernameForm from "./profiles/UsernameForm";
+import UserPasswordForm from "./profiles/UserPasswordForm";
+import ProfileEditForm from "./profiles/ProfileEditForm";
 
 function App() {
 
@@ -19,82 +22,97 @@ function App() {
   const profile_id = currentUser?.profile_id || '';
 
   return (
-        <div className={styles.App}>
-          <NavBar />
-          <Container className={styles.Main}>
-            <Switch>
-              <Route
-                exact
-                path='/'
-                render={() => <AllRecipes message='Nothing here. Adjust your search.'/>}
+    <div className={styles.App}>
+      <NavBar />
+      <Container className={styles.Main}>
+        <Switch>
+          <Route
+            exact
+            path='/'
+            render={() => <AllRecipes message='Nothing here. Adjust your search.' />}
+          />
+          <Route
+            exact
+            path='/favourites'
+            render={() => (
+              <AllRecipes
+                message='Nothing here. Adjust your search or like a recipe.'
+                filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
               />
-              <Route
-                exact
-                path='/favourites'
-                render={() => (
-                  <AllRecipes
-                    message='Nothing here. Adjust your search or like a recipe.'
-                    filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
-                  />
-                )}
+            )}
+          />
+          <Route
+            exact
+            path='/made'
+            render={() => (
+              <AllRecipes
+                message='Nothing here. Adjust your search or mark a recipe as made.'
+                filter={`made__owner__profile=${profile_id}&ordering=-made__created_at&`}
               />
-              <Route
-                exact
-                path='/made'
-                render={() => (
-                  <AllRecipes
-                    message='Nothing here. Adjust your search or mark a recipe as made.'
-                    filter={`made__owner__profile=${profile_id}&ordering=-made__created_at&`}
-                  />
-                )}
+            )}
+          />
+          <Route
+            exact
+            path='/following'
+            render={() => (
+              <AllRecipes
+                message='Nothing here. Adjust your search or follow a creator.'
+                filter={`owner__followed__owner__profile=${profile_id}&`}
               />
-              <Route
-                exact
-                path='/following'
-                render={() => (
-                  <AllRecipes
-                    message='Nothing here. Adjust your search or follow a creator.'
-                    filter={`owner__followed__owner__profile=${profile_id}&`}
-                  />
-                )}
-              />
-              <Route
-                exact
-                path='/signin'
-                render={() => <SignInForm />}
-              />
-              <Route
-                exact
-                path='/signup'
-                render={() => <SignUpForm />}
-              />
-              
-              <Route
-                exact
-                path='/recipes/create'
-                render={() => <RecipeCreateForm />}
-              />
-              <Route
-                exact
-                path='/recipes/:id'
-                render={() => <RecipePage />}
-              />
-              <Route
-                exact
-                path="/recipes/:id/edit"
-                render={() => <RecipeEditForm />}
-              />
-              <Route
-                exact
-                path="/profiles/:id"
-                render={() => <ProfilePage />}
-              />
-              <Route
-                render={() => <p>Page not found!</p>}
-              />
-            </Switch>
-          </Container>
-        </div>
+            )}
+          />
+          <Route
+            exact
+            path='/signin'
+            render={() => <SignInForm />}
+          />
+          <Route
+            exact
+            path='/signup'
+            render={() => <SignUpForm />}
+          />
+
+          <Route
+            exact
+            path='/recipes/create'
+            render={() => <RecipeCreateForm />}
+          />
+          <Route
+            exact
+            path='/recipes/:id'
+            render={() => <RecipePage />}
+          />
+          <Route
+            exact
+            path="/recipes/:id/edit"
+            render={() => <RecipeEditForm />}
+          />
+          <Route
+            exact
+            path="/profiles/:id"
+            render={() => <ProfilePage />}
+          />
+          <Route
+            exact
+            path="/profiles/:id/edit/username"
+            render={() => <UsernameForm />}
+          />
+          <Route
+            exact
+            path="/profiles/:id/edit/password"
+            render={() => <UserPasswordForm />}
+          />
+          <Route
+            exact
+            path="/profiles/:id/edit"
+            render={() => <ProfileEditForm />}
+          />
+          <Route
+            render={() => <p>Page not found!</p>}
+          />
+        </Switch>
+      </Container>
+    </div>
   );
 }
 
