@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import { axiosReq } from '/workspace/genshin-recipes-blog/src/api/axiosDefaults.js';
-import appStyles from '/workspace/genshin-recipes-blog/src/App.module.css'
-import Asset from '/workspace/genshin-recipes-blog/src/components/Asset.js';
-import { useCurrentUser } from '/workspace/genshin-recipes-blog/src/contexts/CurrentUserContext.js';
+import appStyles from '../../App.module.css'
+import Asset from '../../components/Asset.js';
+import { useCurrentUser } from '../../contexts/CurrentUserContext.js';
 import PopularRecipe from './PopularRecipe';
 
 const PopularRecipes = ({ mobile }) => {
