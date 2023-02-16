@@ -15,7 +15,7 @@ import styles from "../../styles/SignForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
-// import { useRedirect } from "../../hooks/useRedirect";
+import { useRedirect } from "../../hooks/useRedirect";
 // import { setTokenTimestamp } from "../../utils/utils";
 
 import logo from "../../assets/ei-miko-cooking.png";
@@ -24,8 +24,7 @@ function SignInForm() {
 
     const setCurrentUser = useSetCurrentUser();
 
-    // redirect users away from this page if already logged in
-    // useRedirect('loggedIn')
+    useRedirect('loggedIn');
 
     const [signInData, setSignInData] = useState({
         username: "",
@@ -43,7 +42,6 @@ function SignInForm() {
             const { data } = await axios.post("/dj-rest-auth/login/", signInData);
             setCurrentUser(data.user);
             // setTokenTimestamp(data);
-            // send user back to previous page upon successful sign in
             history.goBack();
         } catch (err) {
             setErrors(err.response?.data);

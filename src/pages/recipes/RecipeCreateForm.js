@@ -17,8 +17,10 @@ import Asset from "../../components/Asset";
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import Alert from "react-bootstrap/Alert";
+import { useRedirect } from "../../hooks/useRedirect";
 
 function RecipeCreateForm() {
+    useRedirect('loggedOut');
 
     const [errors, setErrors] = useState({});
 
