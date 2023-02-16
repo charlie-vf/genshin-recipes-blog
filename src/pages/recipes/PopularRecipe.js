@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from '/workspace/genshin-recipes-blog/src/styles/Profile.module.css';
-import btnStyles from "/workspace/genshin-recipes-blog/src/styles/Button.module.css";
-import { useCurrentUser } from '/workspace/genshin-recipes-blog/src/contexts/CurrentUserContext.js';
+import styles from '../../styles/Profile.module.css';
+import btnStyles from "../../styles/Button.module.css";
+import { useCurrentUser } from '../../contexts/CurrentUserContext.js';
 import { Link } from 'react-router-dom';
-import Avatar from '/workspace/genshin-recipes-blog/src/components/Avatar.js';
+import Avatar from '../../components/Avatar.js';
 import { Button } from 'react-bootstrap';
 
 const PopularRecipe = (props) => {
