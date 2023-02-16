@@ -146,15 +146,9 @@ If the user is logged out:
 
 #### Home Page
 
-Displays all recipes posted to the site in order of most recently created, with a reusable component displaying the most liked recipes, which features on all pages except the Create Recipe page and Sign In/Up/Out.
+Displays all recipes posted to the site in order of most recently created, with a reusable component displaying the most liked recipes, which features on all pages except the Create Recipe page and Sign In/Up.
 
 ![Home Page](src/docs/HomePage.png)
-
-#### Create Recipe Page
-
-Contains fields to add an image, recipe title, ingredients & method.
-
-![Create Recipe Page](src/docs/CreateRecipe.png)
 
 #### Following, Favourites & Made Pages
 
@@ -163,6 +157,12 @@ In order:
 - Recipes by users the logged in user follows
 - Recipes the logged in user has liked
 - Recipes the logged in user has marked as made
+
+#### Create Recipe Page
+
+Contains fields to add an image, recipe title, ingredients & method.
+
+![Create Recipe Page](src/docs/CreateRecipe.png)
 
 #### Sign In Page
 
@@ -175,3 +175,43 @@ With link to the sign up page if the user does not already have an account.
 With link to the sign in page if the user already has an account.
 
 ![Sign Up Page](src/docs/SignUp.png)
+
+#### Edit Profile Options
+
+Available on the user's own profile when they are logged in via a burger icon. Users can edit their profile image and bio, change their username and update their password.
+
+![Edit Profile Burger](src/docs/ProfileBurger.png)
+
+Edit Profile Page
+
+![Edit Profile Page](src/docs/EditProfile.png)
+
+Change Username Page - prefilled with current username
+
+![Change Username Page](src/docs/ChangeUsername.png)
+
+Change Password Page
+
+![Change Password Page](src/docs/ChangePassword.png)
+
+### Future Features
+
+- Ability to leave a rating and review on recipes after marking them as made. This will be viewable on the recipe's page as an additional component.
+
+## **Technologies**
+
+Languages:
+
+- HTML5
+- CSS
+- JavaScript
+
+Frameworks etc.:
+
+- Django/allauth
+- Bootstrap - CSS package for design
+- Cloudinary - image hosting
+- ElephantSQL - database hosting
+- GitHub - website hosting
+- GitPod - development platform
+- Heroku - deployed website host
