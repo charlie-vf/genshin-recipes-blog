@@ -14,7 +14,7 @@ import Comments from "../comments/Comment";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Asset from "../../components/Asset";
 import { fetchMoreData } from "../../utils/utils";
-import PopularCreators from "../../profiles/PopularCreators";
+import PopularRecipes from "./PopularRecipes";
 
 
 function RecipePage(props) {
@@ -51,8 +51,8 @@ function RecipePage(props) {
 
     return (
         <Row className="h-100">
-            <Col lg={2} className="d-none d-lg-block p-0 p-lg-2">
-                <p>Popular recipes</p>
+            <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
+                <PopularRecipes />
             </Col>
             <Col className="py-2 p-0 p-lg-2" lg={8}>
                 <Recipe {...recipe.results[0]} setRecipes={setRecipe} recipePage />
@@ -97,9 +97,6 @@ function RecipePage(props) {
                         <Asset spinner />
                     </Container>
                 )}
-            </Col>
-            <Col lg={2} className="d-none d-lg-block p-0 p-lg-2">
-                <PopularCreators />
             </Col>
         </Row>
     );

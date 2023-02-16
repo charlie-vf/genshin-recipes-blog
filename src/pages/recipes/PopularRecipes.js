@@ -44,7 +44,7 @@ const PopularRecipes = ({ mobile }) => {
                     <hr />
                     {mobile ? (
                         <div className="d-flex justify-content-around">
-                            {popularRecipes.results.slice(0, 4).map((recipe) => (
+                            {popularRecipes.results.slice(0, 3).map((recipe) => (
                                 <PopularRecipe
                                     key={recipe.id}
                                     recipe={recipe}
@@ -53,7 +53,7 @@ const PopularRecipes = ({ mobile }) => {
                             ))}
                         </div>
                     ) : (
-                        popularRecipes.results.slice(0, 4).map((recipe) => (
+                        popularRecipes.results.slice(0, 6).map((recipe) => (
                             <PopularRecipe
                                 key={recipe.id}
                                 recipe={recipe}

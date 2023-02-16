@@ -18,10 +18,8 @@
     text-align: center;
     border-radius: 100px;
     border-color: transparent;
-    padding: 1px 7px;
-    margin-left: 8px;
-    max-width: 25px;
-    max-height: 25px;
+    padding: 4px 10px;
+    min-width: 30px;
     background-color: #5091ca;
 }
 
@@ -50,17 +48,17 @@
 
 .Follow,
 .Unfollow:hover {
-    /* background-color: #242a3d;
-  color: white; */
     background-color: #9fcdf5;
     color: #5091ca;
 }
 
 .Follow:hover,
 .Unfollow {
-    /* background-color: #dadadf;
-  color: #242a3d;
-  border-color: #242a3d; */
     background-color: #5091ca;
     color: #9fcdf5;
+}
+
+.PopularButton {
+    background-color: #9fcdf5;
+    color: #5091ca;
 }

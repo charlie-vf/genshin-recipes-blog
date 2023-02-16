@@ -1,28 +1,24 @@
 import React from 'react';
 import styles from '../../styles/Profile.module.css';
 import btnStyles from "../../styles/Button.module.css";
-import { useCurrentUser } from '../../contexts/CurrentUserContext.js';
 import { Link } from 'react-router-dom';
 import Avatar from '../../components/Avatar.js';
-import { Button } from 'react-bootstrap';
+
 
 const PopularRecipe = (props) => {
 
     const {
         recipe,
         mobile,
-        imageSize = 35,
+        imageSize = 70,
     } = props;
 
     const {
         id,
-        following_id,
         image,
         owner
     } = recipe;
 
-    const currentUser = useCurrentUser();
-    const is_owner = currentUser?.username === owner;
 
     return (
         <div
@@ -42,31 +38,23 @@ const PopularRecipe = (props) => {
                 </Link>
             </div>
             <div
-                className={`mx-2 ${styles.WordBreak}`}
+                className={`mx-4 ${styles.WordBreak}`}
             >
-                {owner}
+                <Link
+                    to={`/recipes/${id}`}
+                    className='align-self-center'
+                >
+                    {owner}
+                </Link>
+            </div>
+            <div
+                className={`${styles.WordBreak} ${btnStyles.ButtonFollow} ${btnStyles.PopularButton}`}
+            >
+                {recipe.likes_count}
             </div>
             <div
                 className={`text-right ${mobile && 'ml-auto'}`}
             >
-                {!mobile &&
-                    currentUser &&
-                    !is_owner &&
-                    (following_id ? (
-                        <Button
-                            className={`${btnStyles.ButtonFollow} ${btnStyles.Unfollow}`}
-                            onClick={() => { }}
-                        >
-                            -
-                        </Button>
-                    ) : (
-                        <Button
-                            className={`${btnStyles.ButtonFollow} ${btnStyles.Follow}`}
-                            onClick={() => { }}
-                        >
-                            +
-                        </Button>
-                    ))}
             </div>
         </div>
     )

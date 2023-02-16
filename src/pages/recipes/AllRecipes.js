@@ -15,7 +15,6 @@ import NoResults from "../../assets/noresults.png";
 import Asset from "../../components/Asset";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
-import PopularCreators from "../../profiles/PopularCreators";
 import PopularRecipes from "./PopularRecipes";
 
 function AllRecipes({ message, filter = '' }) {
@@ -48,11 +47,11 @@ function AllRecipes({ message, filter = '' }) {
 
     return (
         <Row className="h-100">
-            <Col lg={2} className="d-none d-lg-block p-0 p-lg-2">
+            <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
                 <PopularRecipes />
             </Col>
             <Col lg={8} className="d-lg-none p-0 p-lg-2">
-                <PopularCreators mobile />
+                <PopularRecipes mobile />
             </Col>
             <Col className="py-2 p-0 p-lg-2" lg={8}>
                 <i className={`fa-solid fa-eye ${styles.SearchIcon}`} />
@@ -100,9 +99,6 @@ function AllRecipes({ message, filter = '' }) {
                         <Asset spinner />
                     </Container>
                 )}
-            </Col>
-            <Col lg={2} className="d-none d-lg-block p-0">
-                <PopularCreators />
             </Col>
         </Row>
     );

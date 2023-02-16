@@ -10,7 +10,6 @@ import styles from "../styles/ProfilePage.module.css";
 import appStyles from "../App.module.css";
 import btnStyles from "../styles/Button.module.css";
 
-import PopularCreators from "./PopularCreators";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../api/axiosDefaults";
@@ -21,6 +20,7 @@ import Recipe from "../pages/recipes/Recipe";
 import NoResults from "../assets/noresults.png";
 import { fetchMoreData } from "../utils/utils";
 import { ProfileEditDropdown } from "../components/EditDeleteDropdown";
+import PopularRecipes from "../pages/recipes/PopularRecipes";
 
 function ProfilePage() {
     const [hasLoaded, setHasLoaded] = useState(false);
@@ -137,8 +137,11 @@ function ProfilePage() {
 
     return (
         <Row>
+            <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
+                <PopularRecipes />
+            </Col>
             <Col className="py-2 p-0 p-lg-2" lg={8}>
-                <PopularCreators mobile />
+                <PopularRecipes mobile />
                 <Container className={appStyles.Content}>
                     {hasLoaded ? (
                         <>
@@ -149,9 +152,6 @@ function ProfilePage() {
                         <Asset spinner />
                     )}
                 </Container>
-            </Col>
-            <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-                <PopularCreators />
             </Col>
         </Row>
     );

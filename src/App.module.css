@@ -10,9 +10,10 @@
 
 .Content {
     background: rgb(220, 248, 255);
-    padding: 15px;
+    padding: 20px;
     border-radius: 1px;
     border: 2px solid #9fcdf5;
+    text-align: center;
 }
 
 .SignFormImage {
