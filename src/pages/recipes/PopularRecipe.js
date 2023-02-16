@@ -47,11 +47,24 @@ const PopularRecipe = (props) => {
                     {owner}
                 </Link>
             </div>
-            <div
+            {/* <div
                 className={`${styles.WordBreak} ${btnStyles.ButtonFollow} ${btnStyles.PopularButton}`}
             >
                 {recipe.likes_count}
-            </div>
+            </div> */}
+            {recipe.likes_count === 1 ? (
+                <div
+                    className={`${styles.WordBreak} ${btnStyles.ButtonFollow} ${btnStyles.PopularButton}`}
+                >
+                    {recipe.likes_count} like
+                </div>
+            ) : (
+                <div
+                    className={`${styles.WordBreak} ${btnStyles.ButtonFollow} ${btnStyles.PopularButton}`}
+                >
+                    {recipe.likes_count} likes
+                </div>
+            )}
             <div
                 className={`text-right ${mobile && 'ml-auto'}`}
             >
