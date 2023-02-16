@@ -183,9 +183,15 @@ function RecipeCreateForm() {
                                 ref={imageInput}
                             />
                         </Form.Group>
+                        {errors?.image?.map((message, idx) => (
+                            <Alert variant="warning" key={idx}>
+                                {message}
+                            </Alert>
+                        ))}
+                        <div className="d-md-none">{textFields}</div>
                     </Container>
                 </Col>
-                <Col md={8} lg={7} className="d-none d-md-block p-0 p-md-2">
+                <Col md={5} lg={7} className="d-none d-md-block p-0 p-md-2">
                     <Container className={appStyles.Content}>{textFields}</Container>
                 </Col>
             </Row>
