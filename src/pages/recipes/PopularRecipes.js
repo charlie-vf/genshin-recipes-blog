@@ -53,7 +53,7 @@ const PopularRecipes = ({ mobile }) => {
                             ))}
                         </div>
                     ) : (
-                        popularRecipes.results.slice(0, 6).map((recipe) => (
+                        popularRecipes.results.slice(0, 4).map((recipe) => (
                             <PopularRecipe
                                 key={recipe.id}
                                 recipe={recipe}
