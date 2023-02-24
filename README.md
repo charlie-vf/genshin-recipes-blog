@@ -87,7 +87,7 @@ The final main milestone was user profiles, with editing functionality for the u
 - As a logged in user, I can edit my own profile so that I can update my public details
 - As a user, I can edit my username & password so that I can keep them relevant and secure
 
-Following the main milestones, focus was placed on tidying things the user doesn't necessarily see, but need to work.
+Following the main milestones, Week Four focus was placed on tidying up things the user doesn't necessarily see, further testing and removing unecessary/unused code.
 
 ## **Structure**
 
@@ -102,9 +102,10 @@ The following image displays how the main site's pages all link together for log
 
 ## **Skeleton**
 
-All pages follow the same general structure, bar the Create Recipe page.
+All main pages follow the same general layout, bar the Create Recipe page. The layout is simple so all content is easily viewable for all users.
 
 Home, Following, Favourites, Made & Profile (for profile, recipes display is changed to profile content)
+
 ![Wireframe](src/docs/Wireframe.png)
 
 Create Recipe
@@ -201,7 +202,7 @@ Change Password Page
 
 ![Change Password Page](src/docs/ChangePassword.png)
 
-## *React Components*
+## **React Components**
 
 To minimise unnecessary repetition in this application, cross-page components were created in separate files to allow them to be easily implemented and customised throughout the site. This also aided in troubleshooting as smaller aspects of each of the site's functions could be worked on without affecting the site as a whole.
 
@@ -211,9 +212,10 @@ The most obvious of these is the NavBar, which uses the reusable CurrentUser con
 
 As there are three areas which utilise edit and/or delete functionality (user's profile, user's recipes & user's comments), I created the EditDeleteDropdown component to hold the main code for these alterations, and imported it into the relevant files with further work, such as handle functions, being present in those individual files. This prevented having to rewrite the parts of the dropdown menu which would be the same throughout in every component I wanted this feature to be.
 
+The Avatar component is used both for displaying the User's profile photo on various components (i.e. recipes, comments, profile page) and for the icon in the Popular Recipes component. As such, I created a generic component for the Avatar which could be customised to display the relevant image.
 
 
-### Future Features
+## **Future Features**
 
 - Ability to leave a rating and review on recipes after marking them as made. This will be viewable on the recipe's page as an additional component.
 - Filter favourites page by recipes user has tried, instead of those being displayed as a separate page.
@@ -227,6 +229,8 @@ I believe both of these features would really improve the user experience of thi
     - message other users so as to create a more personal feel to site to just what commenting under recipes can create
 
 - Install a Text Editor to improve the display of ingredients and methods content. As with the first two future features, this had to be benched due to sudden technical constraints.
+
+- Way to view who has liked a recipe/marked it as made, potentially as a pop-up.
 
 ## **Technologies**
 
@@ -272,13 +276,15 @@ All functionality of the site was repeatedly and rigorously tested throughout pr
     - creating further users to test following/unfollowing functionality
     - ensuring user's recipes displayed when viewing their profile
     - ensuring user's stats displayed and updated immediately when viewing their profile
-    - following the links available in the profile dropdown (edit username, edit description, change password) and performing those actions
+    - following the links available in the profile dropdown (edit username, edit profile (image & bio), change password) and performing those actions
 
 4. Recipes
 
 - Initially tested whilst testing Profiles by creating a recipe and ensuring it displayed on the Home page (AllRecipes)
 - Editing a recipe was tested by editing the image, title, ingredients & method individually and all at once and was successful
+    - and redirects to the previous page once complete
 - Deleting a recipe via the delete option was successful
+    - and redirects to the previous page once complete
 - Like/Made/Commenting functionality tested upon completion on multiple recipes
     - On a recipe the user created, I attempted to like and was presented with the appropriate error message
     - On a recipe the user did not create, I attempted to like and was successful in increasing the like display count by 1
@@ -287,22 +293,30 @@ All functionality of the site was repeatedly and rigorously tested throughout pr
     - Commenting successfully displayed the comment immediately without page refresh
     - On the user's own comments, navigating to edit and delete via the burger icon successfully completed those actions
 
+5. Mobile View
+
+- Tested on laptop by shrinking screen to see how the pages changed and using DevTools to view on various screen sizes, as well as on my mobile device.
+    - Helped flag issues whereby certain components failed to display on mobile view. These were all fixed.
+
 ## **Issues**
 
 ### Resolved
 
 - Issue whereby a logged in user could not log out and had to wait for the access token to expire
-    - This was due to a missing forward slash in the back-end application
+    - This was due to missing 'response' in logout_view return
 - Issue whereby anybody could access the Create Recipes page, regardless of authentication state
     - This was due to a permissions issue in the back-end and was found & fixed through manual testing
+- Access to site being blocked by CORS
+    - This was due to using the incorrect BaseURL in axiosDefaults
 
 ### Ongoing
 
-- Uncertain if this is specific to something in my browser: occassionally, access is blocked to 'dj-rest-auth/user/'
-    - This error can be cleared by refreshing the page and does not seem to cause any actual issues with using the site
+- Uncertain how to resolve: occasionally, access is blocked to 'dj-rest-auth/user/'
+    - This error can be cleared by refreshing the page
 
 ## **Credits**
 
 - All images were taken from Google
+- All recipes were taken from Google, YouTube, Reddit & HoyoLab (Genshin Impact's creator's official social media page)
 - Slack for troubleshooting help
 - Stack Overflow for further troubleshooting help
