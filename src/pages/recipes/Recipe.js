@@ -139,10 +139,12 @@ const Recipe = (props) => {
                 <Card.Img src={image} alt={title} />
             </Link>
             <Card.Body>
-                {title && <Card.Title className='text-center'>{title}</Card.Title>}
+                {title && <Card.Title>{title}</Card.Title>}
                 <hr/>
-                {ingredients && <Card.Title>Ingredients<hr/><p>{ingredients}</p></Card.Title>}
-                {method && <Card.Title>Method<hr/><p>{method}</p></Card.Title>}
+                {ingredients && <Card.Title>Ingredients<hr/>
+                    <p className={styles.RecipeContent}>{ingredients}</p></Card.Title>}
+                {method && <Card.Title>Method<hr/>
+                    <p className={styles.RecipeContent}>{method}</p></Card.Title>}
                 <div className={styles.PostBar}>
                     {is_owner ? (
                         <OverlayTrigger

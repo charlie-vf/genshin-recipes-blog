@@ -11,6 +11,10 @@ h5 {
     margin: 0 0;
 }
 
+.RecipeContent {
+    font-size: 0.9rem;
+}
+
 .Icon {
     color: #0d4e87;
 }

@@ -16,7 +16,6 @@ const PopularRecipe = (props) => {
     const {
         id,
         image,
-        owner
     } = recipe;
 
 
@@ -37,30 +36,15 @@ const PopularRecipe = (props) => {
                     />
                 </Link>
             </div>
-            <div
-                className={`mx-4 ${styles.WordBreak}`}
-            >
-                <Link
-                    to={`/recipes/${id}`}
-                    className='align-self-center'
-                >
-                    {owner}
-                </Link>
-            </div>
-            {/* <div
-                className={`${styles.WordBreak} ${btnStyles.ButtonFollow} ${btnStyles.PopularButton}`}
-            >
-                {recipe.likes_count}
-            </div> */}
             {recipe.likes_count === 1 ? (
                 <div
-                    className={`${styles.WordBreak} ${btnStyles.ButtonFollow} ${btnStyles.PopularButton}`}
+                    className={`mx-auto ${styles.WordBreak} ${btnStyles.ButtonFollow} ${btnStyles.PopularButton}`}
                 >
                     {recipe.likes_count} like
                 </div>
             ) : (
                 <div
-                    className={`${styles.WordBreak} ${btnStyles.ButtonFollow} ${btnStyles.PopularButton}`}
+                    className={`mx-auto ${styles.WordBreak} ${btnStyles.ButtonFollow} ${btnStyles.PopularButton}`}
                 >
                     {recipe.likes_count} likes
                 </div>
