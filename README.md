@@ -314,6 +314,20 @@ All functionality of the site was repeatedly and rigorously tested throughout pr
 - Uncertain how to resolve: occasionally, access is blocked to 'dj-rest-auth/user/'
     - This error can be cleared by refreshing the page
 
+
+## **Deployment**
+
+This project was created using a GitPod workspace, commited to Git, pushed to GitHub and deployed on Heroku.
+
+Heroku Deployment Steps:
+
+- Select New App & choose a name and location
+- Select Deploy and link to GitHub repository
+- Manually deploy site (choose automatic deployment if desired)
+
+- Select Settings -> Reveal Config Vars
+- Add CLIENT_ORIGIN: your deployed site URL
+
 ## **Credits**
 
 - All images were taken from Google
