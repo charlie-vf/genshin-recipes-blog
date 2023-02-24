@@ -10,6 +10,8 @@ import CommentEditForm from "./CommentEditForm";
 
 const Comments = (props) => {
 
+  // Display & delete functionality for user comments
+
   const {
     profile_id,
     profile_image,

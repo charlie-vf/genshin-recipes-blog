@@ -14,6 +14,8 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Recipe = (props) => {
 
+    // main & handle functionality for Recipe displays & counts
+
     const {
         id,
         owner,

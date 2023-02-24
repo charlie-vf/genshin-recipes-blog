@@ -6,6 +6,9 @@ import { axiosRes } from "../../api/axiosDefaults";
 import styles from "../../styles/CommentForm.module.css";
 
 function CommentEditForm(props) {
+
+    // Editor form for user comments
+
     const { id, content, setShowEditForm, setComments } = props;
 
     const [formContent, setFormContent] = useState(content);

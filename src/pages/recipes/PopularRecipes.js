@@ -8,6 +8,8 @@ import PopularRecipe from './PopularRecipe';
 
 const PopularRecipes = ({ mobile }) => {
 
+    // Data collection & display for PopularRecipe component
+
     const [profileData, setProfileData] = useState({
         popularRecipes: { results: [] },
         pageProfile: { results: [] },

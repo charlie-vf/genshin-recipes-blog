@@ -19,6 +19,8 @@ import PopularRecipes from "./PopularRecipes";
 
 function RecipePage(props) {
 
+    // Main display for individual recipes with loading functionality
+
     const { id } = useParams();
     const [recipe, setRecipe] = useState({ results: [] });
     const currentUser = useCurrentUser();

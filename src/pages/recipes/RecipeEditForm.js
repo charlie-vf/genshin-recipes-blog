@@ -18,6 +18,8 @@ import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 function RecipeEditForm() {
 
+    // Edit form for user recipes
+
     const [errors, setErrors] = useState({});
 
     const [recipeData, setRecipeData] = useState({
@@ -185,6 +187,7 @@ function RecipeEditForm() {
                                 ref={imageInput}
                             />
                         </Form.Group>
+                        <div className="d-md-none">{textFields}</div>
                     </Container>
                 </Col>
                 <Col md={8} lg={7} className="d-none d-md-block p-0 p-md-2">

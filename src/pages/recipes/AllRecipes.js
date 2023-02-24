@@ -19,6 +19,9 @@ import PopularRecipes from "./PopularRecipes";
 
 function AllRecipes({ message, filter = '' }) {
 
+    // Home page displaying All Recipes from which other pages (following, favourites etc.)
+    // build from
+
     const [recipes, setRecipes] = useState({ results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
     const { pathname } = useLocation();

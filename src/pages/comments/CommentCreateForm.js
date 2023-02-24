@@ -9,6 +9,9 @@ import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 
 function CommentCreateForm(props) {
+
+    // Creation form for comments
+
     const { recipe, setRecipe, setComments, profileImage, profile_id } = props;
     const [content, setContent] = useState("");
 

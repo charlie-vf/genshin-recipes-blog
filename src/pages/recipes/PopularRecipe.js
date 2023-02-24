@@ -7,6 +7,8 @@ import Avatar from '../../components/Avatar.js';
 
 const PopularRecipe = (props) => {
 
+    // Styling & linking for use in PopularRecipes component
+
     const {
         recipe,
         mobile,

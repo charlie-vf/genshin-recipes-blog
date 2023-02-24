@@ -20,6 +20,9 @@ import Alert from "react-bootstrap/Alert";
 import { useRedirect } from "../../hooks/useRedirect";
 
 function RecipeCreateForm() {
+
+    // Creation form for recipes
+
     useRedirect('loggedOut');
 
     const [errors, setErrors] = useState({});
