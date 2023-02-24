@@ -1,8 +1,29 @@
 # Genshin Food Blog
 
 [Deployed Site](https://genshin-recipes-blog.herokuapp.com/)
+Repository for [API](https://github.com/charlie-vf/genshin-recipes-blog-api)
 
 *In this ReadMe, I use Genshin Impact, and the abbreviated Genshin, interchangeably*
+
+# Table of Contents
+
+- [Introduction](#introduction)
+- [UX](#ux)
+    - [Strategy](#strategy)
+    - [Scope & Milestones](#scope)
+    - [Structure](#structure)
+    - [Skeleton](#skeleton)
+    - [Surface](#surface)
+        - [Colours](#colours)
+        - [Features](#features)
+- [Reusable React Components](#react-components)
+- [Future Features](#future-features)
+- [Technologies](#technologies)
+- [Testing](#testing)
+- [Issues](#issues)
+- [Deployment](#deployment)
+- [Credits](#credits)
+
 
 ## **Introduction**
 
@@ -243,10 +264,11 @@ Languages:
 Frameworks etc.:
 
 - Django/allauth
-- Bootstrap - CSS package for design
-- Cloudinary - image hosting
+- Bootstrap - further CSS package for design as this works optimally with React & JSX
+- Cloudinary - image hosting as Django does not store images long-term by default
 - ElephantSQL - database hosting
 - GitHub - website hosting
+- Git - version control
 - GitPod - development platform
 - Heroku - deployed website host
 
@@ -256,9 +278,10 @@ Frameworks etc.:
 
 All functionality of the site was repeatedly and rigorously tested throughout production to spot any issues as they arised.
 
-1. NavBar
+1. NavBar/Main Pages
 
-- All NavBar links tested repeatedly to ensure they navigated to the correct pages, which intially displayed placeholder text
+- All NavBar links tested to ensure they navigated to the correct pages, which intially displayed placeholder text
+- If pages have no associated content, they display the noresults asset
 
 2. Authentication restrictions
 
@@ -303,7 +326,7 @@ All functionality of the site was repeatedly and rigorously tested throughout pr
 ### Resolved
 
 - Issue whereby a logged in user could not log out and had to wait for the access token to expire
-    - This was due to missing 'response' in logout_view return
+    - This was due to missing 'response' in logout_view return in back-end
 - Issue whereby anybody could access the Create Recipes page, regardless of authentication state
     - This was due to a permissions issue in the back-end and was found & fixed through manual testing
 - Access to site being blocked by CORS
