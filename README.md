@@ -509,5 +509,6 @@ Heroku Deployment Steps:
 - [FontAwesome](https://fontawesome.com/) for icons
 - [LucidChart](https://lucid.app/) for Wireframes sketches
 
+- The Code Institute Moments walkthrough project for explaining how everything works
 - Slack for troubleshooting help
 - Stack Overflow for further troubleshooting help
