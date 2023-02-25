@@ -1,6 +1,7 @@
 # Genshin Food Blog
 
 [Deployed Site](https://genshin-recipes-blog.herokuapp.com/)
+
 Repository for [API](https://github.com/charlie-vf/genshin-recipes-blog-api)
 
 *In this ReadMe, I use Genshin Impact, and the abbreviated Genshin, interchangeably*
@@ -37,6 +38,8 @@ Although aimed at the game's player base, it is largely a Japanese/Chinese inspi
 ## **Strategy**
 
 I wanted to make this blog because recreating your favourite dishes from various media is fun, but often difficult, as recipe instructions in games are generally limited to one or two generic ingredients, for example, 'meat' and 'plant'. As such, I wanted a place which could compact recipes players have tried in real life in one place so others can enjoy the dishes they're familiar with in-game.
+
+The site has full CRUD functionality to allow creation, reading, updating & deletion.
 
 ## **Scope**
 
@@ -130,6 +133,7 @@ Home, Following, Favourites, Made & Profile (for profile, recipes display is cha
 ![Wireframe](src/docs/Wireframe.png)
 
 Create Recipe
+
 ![Wireframe2](src/docs/Wireframe2.png)
 
 ## **Surface**
@@ -137,6 +141,7 @@ Create Recipe
 ### **Font Family**
 
 The font used throughout this site is Montserrat from Google Fonts. I chose this because it is a clear, softer font which fits with the overall gentle theme of the site.
+The backup font is sans-serif.
 
 ### **Colours**
 
@@ -153,7 +158,7 @@ The background for all pages is aliceblue, a white tinted with blue which provid
 
 ### **Features**
 
-#### Navbar
+*Navbar*
 
 The NavBar features on every page of the site and provides the user with easy navigation to:
 
@@ -177,13 +182,15 @@ If the user is logged out:
 - Sign In button
 - Sign Up button
 
-#### Home Page
+*Home Page*
 
 Displays all recipes posted to the site in order of most recently created, with a reusable component displaying the most liked recipes, which features on all pages except the Create Recipe page and Sign In/Up.
 
 ![Home Page](src/docs/HomePage.png)
 
-#### Following, Favourites & Made Pages
+*Following, Favourites & Made Pages*
+
+Same layout as home page, filtered to display relevant content.
 
 In order:
 
@@ -191,25 +198,49 @@ In order:
 - Recipes the logged-in user has liked
 - Recipes the logged-in user has marked as made
 
-#### Create Recipe Page
+*Create Recipe Page*
 
 Contains fields to add an image, recipe title, ingredients & method.
 
 ![Create Recipe Page](src/docs/CreateRecipe.png)
 
-#### Sign In Page
+*Profile Page*
+
+Displays the popular recipes component, with the main component changing to display user avatar, stats & their own recipes.
+
+Own Profile Page:
+
+![Profile Page](src/docs/ProfilePage.png)
+
+Other User's Profile Page:
+
+![Other's Profile Pages](src/docs/ProfileOthers.png)
+
+*Sign In Page*
 
 With a link to the sign-up page if the user does not already have an account.
 
 ![Sign In Page](src/docs/SignIn.png)
 
-#### Sign Up Page
+Error message displayed if incorrect credentials entered.
+
+![Incorrect Credentials](src/docs/IncorrectCredentials.png)
+
+*Sign Up Page*
 
 With a link to the sign-in page if the user already has an account.
 
 ![Sign Up Page](src/docs/SignUp.png)
 
-#### Edit Profile Options
+Error messages
+
+Error messages are displayed if user input is invalid, for example:
+
+![Sign Up Blank Fields](src/docs/SignUpBlank.png)
+
+![Sign Up Password Short](src/docs/SignUpShort.png)
+
+*Edit Profile Options*
 
 Available on the user's profile when logged-in via a burger icon. Users can edit their profile image and bio, change their username and update their password.
 
@@ -227,9 +258,11 @@ Change Password Page
 
 ![Change Password Page](src/docs/ChangePassword.png)
 
-#### No Results Component
+*No Results Component*
 
-Displays if there are no results, e.g., if a user navigates to 'Following' but is yet to follow a user.
+Displays if there are no results, e.g., if a user navigates to 'Following' but is yet to follow a user, or types an invalid name/word into the searchbar.
+
+Text under the image is relevant to the page the user is viewing.
 
 ![No Results Page](src/docs/NoResultsPage.png)
 
@@ -240,7 +273,7 @@ To minimise unnecessary repetition in this application, cross-page components we
 
 Examples: 
 
-The most obvious of these is the NavBar, which uses the reusable CurrentUser context to display appropriate links & content based on whether the user is logged in.
+The most obvious of these is the NavBar, which also uses the reusable CurrentUser context to display appropriate links & content based on whether the user is logged in.
 
 As there are three areas which utilise edit and/or delete functionality (user's profile, user's recipes & user's comments), I created the EditDeleteDropdown component to hold the main code for these alterations, and imported it into the relevant files with further work, such as handle functions, being present in those individual files. This prevented having to rewrite the parts of the dropdown menu which would be the same throughout every component I wanted this feature to be.
 
@@ -321,7 +354,7 @@ The site was tested on Google Chrome, Microsoft Edge & Safari and functioned nor
 
 The site was tested on iPhone and functioned normally.
 
-### Manual
+### **Manual**
 
 All site functionality was repeatedly and rigorously tested throughout production to spot any issues as they arose.
 
@@ -408,5 +441,9 @@ Heroku Deployment Steps:
 
 - All images were taken from Google
 - All recipes were taken from Google, YouTube, Reddit & HoyoLab (Genshin Impact's creator's official social media page)
+- [Google Fonts](https://fonts.google.com/) for Montserrat font
+- [FontAwesome](https://fontawesome.com/) for icons
+- [LucidChart](https://lucid.app/) for Wireframes sketches
+
 - Slack for troubleshooting help
 - Stack Overflow for further troubleshooting help
