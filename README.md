@@ -316,7 +316,7 @@ In the case of this website:
 
 While data is loading, the user will see a spinner (displayed using an Asset) to notify them that content is on its way to their screen.
 
-The Popular Recipes component remains mounted throughout page navigation and thus always displays, even while other content is loading.
+The Popular Recipes component remains mounted while navigating through pages which branch from AllRecipes.js and thus always displays, even while other content is loading.
 
 
 ## *Components*
