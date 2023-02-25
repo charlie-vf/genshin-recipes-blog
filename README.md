@@ -28,9 +28,9 @@ Repository for [API](https://github.com/charlie-vf/genshin-recipes-blog-api)
 ## **Introduction**
 
 This Food Blog was created for my fifth project in Code Institute's Full Stack Software Development Course.
-It is aimed at players of HoYoLab's Genshin Impact, providing a place to share recipes inspired by those we can craft in game. 
+The objective of this site was to provide players of HoYoLab's Genshin Impact with a place to share recipes inspired by those you can craft in-game. 
 <p>
-However, it is largely a Japanese/Chinese inspired food blog which is suitable for anybody who is looking for inspiration in these areas.
+Although aimed at the game's player base, it is largely a Japanese/Chinese inspired food blog which is suitable for anybody who is looking for inspiration in these areas.
 
 ## UX
 
@@ -134,6 +134,10 @@ Create Recipe
 
 ## **Surface**
 
+### **Font Family**
+
+The font used throughout this site is Montserrat from Google Fonts. I chose this because it is a clear, softer font which fits with the overall gentle theme of the site.
+
 ### **Colours**
 
 Moving away from my previous themes of purples and blacks, I decided the brightness of Genshin Impact deserved a more light-themed site, this time. Therefore, the colour scheme revolves around blues and white-blues.
@@ -222,6 +226,19 @@ Change Username Page - prefilled with current username
 Change Password Page
 
 ![Change Password Page](src/docs/ChangePassword.png)
+
+#### No Results Component
+
+Displays if there are no results, e.g. if a user navigates to 'Following' but they are yet to follower a user.
+
+![No Results Page](src/docs/NoResultsPage.png)
+
+## **Validation**
+
+CSS Validator: all CSS passes through W3C CSS validator with no issues
+
+![CSS Validator](src/docs/CSSValidator.png)
+
 
 ## **React Components**
 
