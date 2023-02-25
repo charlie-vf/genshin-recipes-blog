@@ -1,10 +1,13 @@
-# Genshin Food Blog
+# Genshin Recipes Blog
+
+![Mockup](src/docs/Mockup.png)
+
+
 
 [Deployed Site](https://genshin-recipes-blog.herokuapp.com/)
 
 Repository for [API](https://github.com/charlie-vf/genshin-recipes-blog-api)
 
-*In this ReadMe, I use Genshin Impact, and the abbreviated Genshin, interchangeably*
 
 # Table of Contents
 
@@ -28,10 +31,10 @@ Repository for [API](https://github.com/charlie-vf/genshin-recipes-blog-api)
 
 ## **Introduction**
 
-This Food Blog was created for my fifth project in Code Institute's Full Stack Software Development Course.
+This Recipes Blog was created for my fifth project in Code Institute's Full Stack Software Development Course.
 The objective of this site was to provide players of miHoYo's Genshin Impact with a place to share recipes inspired by those you can craft in-game within a community atmosphere.
 <p>
-Although aimed at the game's player base, it is largely a Japanese/Chinese inspired food blog which is suitable for anybody who is looking for inspiration in these areas.
+Although aimed at the game's player base, it is largely a Japanese/Chinese inspired recipes blog which is suitable for anybody who is looking for inspiration in these areas.
 
 ## **UX**
 
@@ -118,7 +121,7 @@ Second, adding a search bar to the pages to allow users to search by creator or 
     - following page filters the site's recipes by those from users the user follows
 
 - As a user, I can search recipes by specific keywords/users so that I can easily find what I am looking for
-    - searchbar implemented
+    - searchbar implemented with a timer to prevent fetch requests being sent after each keystroke
 
 - As a user, I can view the most followed users so I can easily navigate to their profile -- this was changed to be the most liked recipes as it felt more relevant to the content of the website as liking recipes would likely be more frequent than following users
     - popular recipes component provides access to the community's favourite recipes & displays the number of likes
@@ -143,13 +146,13 @@ Following the main sprints, Week Four focused on tidying up, final testing and r
 ## **Structure**
 
 The website's structure allows almost everything to be accessible from everywhere.
-From each page, bar the Create page, logged-in users can navigate to Create a Recipe and their Following, Favourites, Made & Profile pages. Logged-in users can sign out from anywhere.
+From each page, logged-in users can navigate to Create a Recipe and their Following, Favourites, Made & Profile pages. Logged-in users can sign out from anywhere.
 
 Users can navigate to other users' profiles by clicking their names above their recipe posts. 
 
 For logged-out users, they can navigate to the Sign Up/Sign In pages, user recipes and profiles.
 
-The following image displays how the site's main pages all link together for logged-in users, bar the Sign Out button which remains in the NavBar throughout, as this is not a page.
+The following diagram details how the site's main pages all link together for logged-in users, bar the Sign Out button, which remains in the NavBar throughout, as this is not a page.
 
 ![Structure](src/docs/Structure.png)
 
@@ -287,11 +290,11 @@ Change Password Page
 
 ![Change Password Page](src/docs/ChangePassword.png)
 
-*No Results Component*
+*No Results*
 
 Displays if there are no results, e.g., if a user navigates to 'Following' but is yet to follow a user, or types an invalid name/word into the searchbar.
 
-Text under the image is relevant to the page the user is viewing.
+React routing allows the text under the image to be relevant to the page the user is viewing.
 
 ![No Results Page](src/docs/NoResultsPage.png)
 
@@ -311,10 +314,14 @@ In the case of this website:
 - When a user edits their bio, this change is automatic
 - All creation and update times display real-time data
 
+While data is loading, the user will see a spinner (displayed using an Asset) to notify them that content is on its way to their screen.
+
+The Popular Recipes component remains mounted throughout page navigation and thus always displays, even while other content is loading.
+
 
 ## *Components*
 
-To minimise unnecessary repetition in this application, cross-page components were created in separate files to allow them to be easily implemented and customised throughout the site. This also aided in troubleshooting as smaller aspects of each of the site's functions could be worked on without affecting the site as a whole.
+To minimise unnecessary repetition in this application and overly large/complicated JavaScript files, small-function and/or multi-use components were created in separate files to allow them to be easily implemented and customised throughout the site. This also aided in troubleshooting as smaller aspects of each of the site's functions could be worked on without affecting the site as a whole.
 
 Examples: 
 
@@ -496,7 +503,7 @@ Heroku Deployment Steps:
 
 ## **Credits**
 
-- All images were taken from Google
+- All images were taken from Google Images
 - All recipes were taken from Google, YouTube, Reddit & HoyoLab (Genshin Impact's creator's official social media page)
 - [Google Fonts](https://fonts.google.com/) for Montserrat font
 - [FontAwesome](https://fontawesome.com/) for icons
