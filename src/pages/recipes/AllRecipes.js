@@ -31,8 +31,8 @@ function AllRecipes({ message, filter = '' }) {
         const fetchRecipes = async () => {
             try {
                 const { data } = await axiosReq.get(`/recipes/?${filter}search=${search}`);
-                setRecipes(data)
-                setHasLoaded(true)
+                setRecipes(data);
+                setHasLoaded(true);
             } catch (err) {
                 // console.log(err)
             }
@@ -41,10 +41,10 @@ function AllRecipes({ message, filter = '' }) {
         setHasLoaded(false);
         const timer = setTimeout(() => {
             fetchRecipes();
-        }, 1000)
+        }, 1000);
         return () => {
-            clearTimeout(timer)
-        }
+            clearTimeout(timer);
+        };
 
     }, [filter, search, pathname]);
 

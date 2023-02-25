@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import styles from "../../styles/Recipe.module.css";
 import Card from "react-bootstrap/Card";
@@ -40,8 +40,8 @@ const Recipe = (props) => {
     const history = useHistory();
 
     const handleEdit = () => {
-        history.push(`/recipes/${id}/edit`)
-    }
+        history.push(`/recipes/${id}/edit`);
+    };
 
     const handleDelete = async () => {
         try {
@@ -50,7 +50,7 @@ const Recipe = (props) => {
         } catch(err) {
             // console.log(err)
         }
-    }
+    };
 
 
     const handleLike = async () => {
@@ -59,8 +59,8 @@ const Recipe = (props) => {
             setRecipes((prevRecipes) => ({
                 ...prevRecipes,
                 results: prevRecipes.results.map((recipe) => {
-                    return recipe.id === id
-                        ? { ...recipe, likes_count: recipe.likes_count + 1, like_id: data.id }
+                    return recipe.id === id ? 
+                        { ...recipe, likes_count: recipe.likes_count + 1, like_id: data.id }
                         : recipe;
                 }),
             }));
@@ -75,8 +75,8 @@ const Recipe = (props) => {
             setRecipes((prevRecipes) => ({
                 ...prevRecipes,
                 results: prevRecipes.results.map((recipe) => {
-                    return recipe.id === id
-                        ? { ...recipe, likes_count: recipe.likes_count - 1, like_id: null }
+                    return recipe.id === id ? 
+                        { ...recipe, likes_count: recipe.likes_count - 1, like_id: null }
                         : recipe;
                 }),
             }));
@@ -92,8 +92,8 @@ const Recipe = (props) => {
             setRecipes((prevRecipes) => ({
                 ...prevRecipes,
                 results: prevRecipes.results.map((recipe) => {
-                    return recipe.id === id
-                        ? { ...recipe, made_count: recipe.made_count + 1, made_id: data.id }
+                    return recipe.id === id ? 
+                        { ...recipe, made_count: recipe.made_count + 1, made_id: data.id }
                         : recipe;
                 }),
             }));
@@ -108,8 +108,8 @@ const Recipe = (props) => {
             setRecipes((prevRecipes) => ({
                 ...prevRecipes,
                 results: prevRecipes.results.map((recipe) => {
-                    return recipe.id === id
-                        ? { ...recipe, made_count: recipe.made_count - 1, made_id: null }
+                    return recipe.id === id ? 
+                        { ...recipe, made_count: recipe.made_count - 1, made_id: null }
                         : recipe;
                 }),
             }));

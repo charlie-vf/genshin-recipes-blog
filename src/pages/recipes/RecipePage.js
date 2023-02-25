@@ -34,22 +34,22 @@ function RecipePage(props) {
                 const [{ data: recipe }, { data: comments }] = await Promise.all([
                     axiosReq.get(`/recipes/${id}`),
                     axiosReq.get(`/comments/?recipe=${id}`)
-                ])
+                ]);
                 setRecipe({ results: [recipe] });
                 setComments(comments);
                 setHasLoaded(true);
             } catch (err) {
                 // console.log(err)
             }
-        }
+        };
         setHasLoaded(false);
         const timer = setTimeout(() => {
             handleMount();
-        }, 1000)
+        }, 1000);
         return () => {
-            clearTimeout(timer)
-        }
-    }, [id])
+            clearTimeout(timer);
+        };
+    }, [id]);
 
     return (
         <Row className="h-100">

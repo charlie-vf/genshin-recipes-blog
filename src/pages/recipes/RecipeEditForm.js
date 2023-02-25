@@ -27,7 +27,7 @@ function RecipeEditForm() {
         ingredients: '',
         method: '',
         image: '',
-    })
+    });
 
     const { title, ingredients, method, image } = recipeData;
 
@@ -39,7 +39,7 @@ function RecipeEditForm() {
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const { data } = await axiosReq(`/recipes/${id}/`)
+                const { data } = await axiosReq(`/recipes/${id}/`);
                 const { title, ingredients, method, image, is_owner } = data;
 
                 is_owner ? setRecipeData({ title, ingredients, method, image })
@@ -49,7 +49,7 @@ function RecipeEditForm() {
             }
         };
         handleMount();
-    }, [history, id])
+    }, [history, id]);
 
     const handleChange = (e) => {
         setRecipeData({
@@ -69,7 +69,7 @@ function RecipeEditForm() {
     };
 
     const handleSubmit = async (event) => {
-        event.preventDefault()
+        event.preventDefault();
         const formData = new FormData();
 
         formData.append("title", title);

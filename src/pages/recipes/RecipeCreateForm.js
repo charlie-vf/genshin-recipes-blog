@@ -32,7 +32,7 @@ function RecipeCreateForm() {
         ingredients: '',
         method: '',
         image: '',
-    })
+    });
 
     const { title, ingredients, method, image } = recipeData;
 
@@ -58,7 +58,7 @@ function RecipeCreateForm() {
     };
 
     const handleSubmit = async (event) => {
-        event.preventDefault()
+        event.preventDefault();
         const formData = new FormData();
 
         formData.append("title", title);

@@ -233,12 +233,6 @@ Displays if there are no results, e.g. if a user navigates to 'Following' but th
 
 ![No Results Page](src/docs/NoResultsPage.png)
 
-## **Validation**
-
-CSS Validator: all CSS passes through W3C CSS validator with no issues
-
-![CSS Validator](src/docs/CSSValidator.png)
-
 
 ## **React Components**
 
@@ -290,6 +284,18 @@ Frameworks etc.:
 - Heroku - deployed website host
 
 ## **Testing**
+
+### **Validation**
+
+CSS Validator: all CSS passed through W3C CSS validator with no issues
+
+![CSS Validator](src/docs/CSSValidator.png)
+
+HTML Validator: flagged trailing slashes and, once removed, passed with through W3C NU validator with no issues.
+
+![HTML Validator](src/docs/HTMLValidator.png)
+
+
 
 ### Manual
 

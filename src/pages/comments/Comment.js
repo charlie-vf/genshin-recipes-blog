@@ -47,7 +47,7 @@ const Comments = (props) => {
     } catch (err) {
 
     }
-  }
+  };
 
   return (
     <>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import { axiosReq } from '../../api/axiosDefaults.js';
-import appStyles from '../../App.module.css'
+import appStyles from '../../App.module.css';
 import Asset from '../../components/Asset.js';
 import { useCurrentUser } from '../../contexts/CurrentUserContext.js';
 import PopularRecipe from './PopularRecipe';
@@ -33,7 +33,7 @@ const PopularRecipes = ({ mobile }) => {
             }
         };
         handleMount();
-    }, [currentUser])
+    }, [currentUser]);
 
     return (
         <Container
