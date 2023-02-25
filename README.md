@@ -11,13 +11,13 @@ Repository for [API](https://github.com/charlie-vf/genshin-recipes-blog-api)
 - [Introduction](#introduction)
 - [UX](#ux)
     - [Strategy](#strategy)
-    - [Scope & Milestones](#scope)
+    - [Scope & Sprints](#scope)
     - [Structure](#structure)
     - [Skeleton](#skeleton)
     - [Surface](#surface)
         - [Colours](#colours)
         - [Features](#features)
-- [Reusable React Components](#react-components)
+- [React](#react)
 - [Future Features](#future-features)
 - [Technologies](#technologies)
 - [Testing](#testing)
@@ -29,11 +29,11 @@ Repository for [API](https://github.com/charlie-vf/genshin-recipes-blog-api)
 ## **Introduction**
 
 This Food Blog was created for my fifth project in Code Institute's Full Stack Software Development Course.
-The objective of this site was to provide players of miHoYo's Genshin Impact with a place to share recipes inspired by those you can craft in-game. 
+The objective of this site was to provide players of miHoYo's Genshin Impact with a place to share recipes inspired by those you can craft in-game within a community atmosphere.
 <p>
 Although aimed at the game's player base, it is largely a Japanese/Chinese inspired food blog which is suitable for anybody who is looking for inspiration in these areas.
 
-## UX
+## **UX**
 
 ## **Strategy**
 
@@ -43,80 +43,109 @@ The site has full CRUD functionality to allow creation, reading, updating & dele
 
 ## **Scope**
 
-## **User Stories**
+## User Stories
 
-The User Stories are mapped out in GitHub Projects using the Kanban board format. Almost all were successfully implemented, with those unfinished documented in the Future Features section of this ReadMe. 
+The User Stories and website features are mapped out in GitHub Projects for this repository using the Kanban board format. with priority labels and mapping to milestones, which were then split into the sprints detailed below. Almost all were successfully implemented, with those unfinished documented at the start of the Future Features section of this ReadMe. 
 
-The user stories are:
+The user stories were split into six sprints across three weeks, with the fourth week being tidy-up:
 
-## Milestone One - Main - Week One
-The first step was getting the general setup of the site's navbar across pages, display of the homepage and infinite scroll on the homepage up and running.
+## Sprint One - Main - Week One
+The first step was planning & getting the general setup of the site's navbar across pages, display of the homepage and infinite scroll on the homepage up and running.
 <p>
-The user should be able to easily navigate the site, with no awkward refreshes or empty/broken screens while data is being fetched.
+The user should be able to easily navigate the site, with no awkward refreshes, next/previous page navigation or empty/broken screens while data is being fetched.
 
 - As a user, I can see the navbar on every page so that I can easily navigate the site
+    - navbar displays seemlessly across all pages
 - As a user, I can navigate pages without them refreshing so that I can smoothly navigate between content
 - As a logged-out user, I can view sign-up/login options so that I can perform those actions and view more of the site's content
+    - navbar conditional rendering displays these options when logged-out
 - As a user, I can view all recipes with the newest first so that I can stay up to date with new content as it is added
+    - content displays in descending order of most recent first
 - As a user, I can endlessly scroll through content so that I can keep viewing without having to page refresh by navigating pages
+    - infinite scroll implemented
 
-## Milestone Two - Authentication - Week Two
+## Sprint Two - Authentication - Week Two - One Day
 Second, I focussed on user authentication regarding account creation and access tokens, with content restrictions based on whether a user is logged in.
 <p>
 Users should be able to create accounts and remain logged in once they have done so for a reasonable period so they are not continuously forced to log back in while they are still browsing the site.
 
 - As a new user, I can create an account so I can access the features restricted to signed-in users
+    - sign-up functionality allows users to create an account
 - As a user, I can log in so that I can view/use the features restricted to signed-in users
+    - sign-in functionality allows users to log-in to their account
 - As a user, I can see if I am logged in or not so that I can log in if required
+    - if logged-in, the navbar displays the user's profile and the 'sign out' option
+    - if logged-out, the navbar displays 'sign in' and 'sign up'
 - As a user, I can remain logged in so that my experience is not interrupted
+    - JWT access tokens allow the user to remain logged in
 
-## Milestone Three - Creating & Liking recipes - Week Two
+## Sprint Three - Creating & Liking recipes - Week Two - Three Days
 With user authentication working, I moved to recipe creation and liking, as these are both available from the homepage.
 <p>
 An essential experience for users of any blog site is interaction with the recipes, so the ability to like them provides both a positive feedback interaction and a way to revisit their favourite recipes.
 
 - As a logged-in user I can create new recipe posts so that I can share them with other users
+    - create recipe page allows users to create recipes and immediately publish them
 - As a logged-in user, I can like recipes/mark them as made so that I can give positive feedback and view them easily again later
+    - like/made functionality below each recipe allows users to like them from the main pages, and the individual recipe pages
 
-## Milestone Four - Individual Recipe pages - Week Two
-This milestone focussed on leaving and displaying comments and providing functionality to edit/delete comments and edit/delete recipes if the user is the recipe's owner.
+## Sprint Four - Individual Recipe pages - Week Two - Three Days
+This sprint focussed on leaving and displaying comments and providing functionality to edit/delete comments and edit/delete recipes if the user is the recipe's owner.
 <p>
 This allows users to further interact with creators and see how others have enjoyed (or not) their recipes.
 
 - As a user, I can navigate to individual recipes so that I can see details such as ingredients, method and comments left by other users
+    - users can click the username, recipe image or comments icon to navigate to the recipe's individual page
 - As a user, I can see when a comment was left so that I can see how popular the recipe currently is
+    - comment date is displayed next to the username for a comment
 - As a logged-in user, I can edit/delete my comments so that I can control my interaction with the recipe
+    - burger icon allows users to edit/delete
 - As a logged-in user, I can edit/delete my recipes from their individual pages so that I can control my post after creation
+    - burger icon allows users to edit/delete
 
-## Milestone Five - Favourites & Made pages & Filters - Week Three
-This milestone was split in two:
+## Sprint Five - Favourites & Made pages, Search & Popular Component - Week Three - Three Days
+This sprint was split in two:
 <p>
-First, displaying favourited and made recipes on their respective pages.
+First, displaying favourited and made recipes on their respective pages and creating the popular recipes component
 <p>
 Second, adding a search bar to the pages to allow users to search by creator or recipe name
 
-- As a user, I can view recipes I have liked so that I can easily come back to them
-- As a user, I can view recipes I have made so that I can easily come back to them
-
+- As a logged-in user, I can view recipes I have liked so that I can easily come back to them
+    - favourites page filters the site's recipes by those the user has liked
+- As a logged-in user, I can view recipes I have made so that I can easily come back to them
+    - made page filters the site's recipes by those the user has marked as made
 - As a logged-in user, I can filter recipes by users I follow so I can see content from my favourite creators
-- As a user, I can search recipes by specific keywords/users so that I can easily find what I am looking for
-- As a user, I can view the most followed users so I can easily navigate to their profile -- this was changed to be the most liked recipes as it felt more relevant to the content of the website
+    - following page filters the site's recipes by those from users the user follows
 
-## Milestone Six - Profiles - Week Three
-The final main milestone was user profiles, including editing functionality for the user's profile and ensuring relevant information displays when viewing others' profiles.
+- As a user, I can search recipes by specific keywords/users so that I can easily find what I am looking for
+    - searchbar implemented
+
+- As a user, I can view the most followed users so I can easily navigate to their profile -- this was changed to be the most liked recipes as it felt more relevant to the content of the website as liking recipes would likely be more frequent than following users
+    - popular recipes component provides access to the community's favourite recipes & displays the number of likes
+
+## Sprint Six - Profiles - Week Three - Three Days
+The final main sprint was user profiles, including editing functionality for the user's profile and ensuring relevant information displays when viewing others' profiles.
 
 - As a user, I can view others' profiles so that I can see their posts, liked content and more
-- As a user, I can view a user's recipes, likes & following/followed counts on their profiles so that I can easily browse their content and find new content
+    - a user can navigate to other users' profiles and see recipes
+- As a user, I can view a user's  likes & following/followed counts on their profiles so that I can easily browse their content and find new content
+    - not fully implemented - see Future Features
 - As a user, I can follow/unfollow other users so that I can easily find my favourite creators and narrow results by them
+    - follow/unfollow button available on user profiles
+    - auto-updates user stats
 - As a logged-in user, I can edit my profile so that I can update my public details
+    - burger icon on user's profile allows editing of bio
 - As a user, I can edit my username & password so that I can keep them relevant and secure
+    - burger icon on user's profile allows editing of username & password
 
-Following the main milestones, Week Four focused on tidying up things the user doesn't necessarily see, further testing and removing unnecessary/unused code.
+Following the main sprints, Week Four focused on tidying up, final testing and removing unnecessary/unused code.
 
 ## **Structure**
 
 The website's structure allows almost everything to be accessible from everywhere.
-From each page, bar the Create page, logged-in users can navigate to Create a Recipe and their Following, Favourites, Made & Profile pages. They can navigate to other users' profiles by clicking their names above their recipe posts. 
+From each page, bar the Create page, logged-in users can navigate to Create a Recipe and their Following, Favourites, Made & Profile pages. Logged-in users can sign out from anywhere.
+
+Users can navigate to other users' profiles by clicking their names above their recipe posts. 
 
 For logged-out users, they can navigate to the Sign Up/Sign In pages, user recipes and profiles.
 
@@ -267,7 +296,23 @@ Text under the image is relevant to the page the user is viewing.
 ![No Results Page](src/docs/NoResultsPage.png)
 
 
-## **React Components**
+## **React**
+
+React is an optimal library for improving user experience as it allows for real-time updating of website content across a range of components, without the need for page refresh.
+
+In the case of this website:
+
+- When a user follows a profile, this is immediately apparent in their user stats and the follow/unfollow button changes accordingly
+- When a user likes or marks a recipe as made, the relevant icon immediately changes and the count increases to reflect the user's actions
+    - The same is true for unliking/unmarking as made
+- When a user comments on a recipe, the comment appears instantly below the recipe
+    - When a user edits/deletes a comment, this is immediately reflected under the recipe
+- When a user creates a new recipe, they will automatically be redirected to the homepage with their new recipe displaying
+- When a user edits their bio, this change is automatic
+- All creation and update times display real-time data
+
+
+## *Components*
 
 To minimise unnecessary repetition in this application, cross-page components were created in separate files to allow them to be easily implemented and customised throughout the site. This also aided in troubleshooting as smaller aspects of each of the site's functions could be worked on without affecting the site as a whole.
 
@@ -282,20 +327,31 @@ The Avatar component is used both for displaying the User's profile photo on var
 
 ## **Future Features**
 
+These three were not implemented in this release due to time constraints created by my laptop breaking, and thus losing multiple days sourcing a new one to continue work.
+
 - Ability to leave a rating and review on recipes after marking them as made. This will be viewable on the recipe's page as an additional component.
 - Filter favourites page by recipes the user has tried, instead of those being displayed as a separate page.
+- User stats (likes, followers & following) when clicked navigate to the relevant content
 
-The above were not implemented in this release due to time constraints created by my laptop breaking, and thus losing multiple days sourcing a new one to continue work.
+I believe these features would improve the user experience of this site:
 
-I believe both of these features would improve the user experience of this site, both for viewers of others' recipes and the owners of the recipes themselves as it would provide invaluable feedback on the reception of content amongst site users.
+- the first for viewers of others' recipes and the owners of the recipes themselves as it would provide invaluable feedback on the reception of content amongst site users
+- the second as it would be less clunky than having two different pages for the content
+- the third as it would allow greater reach for users and their recipes
+
+Further Features:
 
 - Messaging functionality to allow users to message others
     - message recipe creators to ask questions or suggest recipes they should attempt to recreate
     - message other users so as to create a more personal feel to the site over just what commenting under recipes can provide
 
-- Install a Text Editor to improve the ingredients and methods content displays. As with the first two future features, this had to be benched due to sudden technical constraints.
+- Install a Text Editor to improve the ingredients and methods content displays. As with the first three future features, this had to be benched due to sudden technical constraints.
 
 - Way to view who has liked a recipe/marked it as made, potentially as a pop-up/overlay.
+
+- Delete confirmation modal to prevent accidental deletion of recipes/comments
+
+- Option to delete profile
 
 ## **Technologies**
 
@@ -375,6 +431,7 @@ All site functionality was repeatedly and rigorously tested throughout productio
 - After implementation of the Profile and ProfilePage components, further testing as development progressed included:
 
     - navigating to the profile manually through the URL (e.g., /profiles/1)
+    - navigating to the profile via the 'Profile' link
     - navigating to the profile via the user's posted recipes
     - creating further users to test following/unfollowing functionality
     - ensuring user's recipes displayed when viewing their profile
@@ -390,11 +447,11 @@ All site functionality was repeatedly and rigorously tested throughout productio
     - and redirects to the previous page once complete
 - Like/Made/Commenting functionality tested upon completion on multiple recipes
     - On a recipe the user created, I attempted to like and was presented with the appropriate error message
-    - On a recipe the user did not create, I attempted to like and was successful in increasing the like display count by 1
-    - Clicking the 'Made' foodbowl icon increased the count by 1
-    - Secondary clicks of like and made once the count has increased successfully decreased the count by 1
+    - On a recipe the user did not create, I attempted to like and was successful in changing the icon and increasing the like display count by 1
+    - Clicking the 'Made' foodbowl icon changed the icon and increased the count by 1
+    - Secondary clicks of like and made once the count has increased successfully changed the icon and decreased the count by 1
     - Commenting successfully displayed the comment immediately without page refresh
-    - On the user's own comments, navigating to edit and delete via the burger icon successfully completed those actions
+    - On the user's own comments, navigating to edit and delete via the burger icon successfully completed those actions without page refresh
 
 5. Mobile View
 

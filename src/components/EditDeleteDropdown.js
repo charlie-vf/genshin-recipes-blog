@@ -3,6 +3,7 @@ import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useHistory } from "react-router";
 
+// Reusable dropdown components
 
 const CustomToggle = React.forwardRef(({ onClick }, ref) => (
     <i
