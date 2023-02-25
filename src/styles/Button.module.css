@@ -49,16 +49,16 @@
 .Follow,
 .Unfollow:hover {
     background-color: #9fcdf5;
-    color: #5091ca;
+    color: #0d4e87;
 }
 
 .Follow:hover,
 .Unfollow {
-    background-color: #5091ca;
+    background-color: #0d4e87;
     color: #9fcdf5;
 }
 
 .PopularButton {
     background-color: #9fcdf5;
-    color: #5091ca;
+    color: #0d4e87;
 }

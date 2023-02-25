@@ -295,7 +295,25 @@ HTML Validator: flagged trailing slashes and, once removed, passed with through 
 
 ![HTML Validator](src/docs/HTMLValidator.png)
 
+JavaScript Validator: after fixing missing semicolons and misleading line breaks in conditionals, all JavaScript code passed with no warnings.
 
+Lighthouse Report: 
+
+- Performace: how fast the page loads
+    - Needs work
+    - Mostly raised issues with image load times & JavaScript in default files
+
+- Accessibility: how easily users can read the screen - colour contrast
+    - Good
+    - Improved by darkening the font colour of button elements & adding an alt tag to the profile image
+
+- Best Practices: secure connections & JavaScript vulnerabilities
+    - Good
+
+- SEO (Search Engine Optimisation): searchability
+    - Good
+
+![Lighthouse Report](src/docs/LighthouseReport.png)
 
 ### Manual
 
