@@ -467,10 +467,6 @@ All site functionality was repeatedly and rigorously tested throughout productio
 
 ## **Issues**
 
-*Note*
-
-The Profiles folder is sitting outside the Pages folder. This was discovered late and attempting to move it into the Pages folder immediately causes numerous issues in the workspace. This is not an issue that causes any problems, but I would like to make note that I am aware of this.
-
 ### Resolved
 
 - Issue whereby a logged-in user could not log out and had to wait for the access token to expire
@@ -513,5 +509,9 @@ Heroku Deployment Steps:
 - [FontAwesome](https://fontawesome.com/) for icons
 - [LucidChart](https://lucid.app/) for Wireframes sketches
 
+- Slack for troubleshooting help
+- Stack Overflow for further troubleshooting help
+
+- Code Institute Walkthrough project for helping understand how everything works
 - Slack for troubleshooting help
 - Stack Overflow for further troubleshooting help
