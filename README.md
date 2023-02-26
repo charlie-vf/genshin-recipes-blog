@@ -31,8 +31,8 @@ Repository for [API](https://github.com/charlie-vf/genshin-recipes-blog-api)
 
 ## **Introduction**
 
-This Recipes Blog was created for my fifth project in Code Institute's Full Stack Software Development Course.
-The objective of this site was to provide players of miHoYo's Genshin Impact with a place to share recipes inspired by those you can craft in-game within a community atmosphere.
+The Genshin Recipes Blog was created for my fifth project in Code Institute's Full Stack Software Development Course.
+The objective of this site was to provide players of miHoYo's Genshin Impact with a place to share recipes inspired by those you can craft in-game within a community atmosphere where they can easily interact with content and personalise their experience.
 
 Although aimed at the game's player base, it is largely a Japanese/Chinese inspired recipes blog which is suitable for anybody who is looking for inspiration in these areas.
 
@@ -44,21 +44,25 @@ This project uses a combination of HTML, CSS, JavaScript, React.js, Bootstrap.js
 
 I wanted to make this blog because recreating your favourite dishes from various media is fun, but often difficult, as recipe instructions in games are generally limited to one or two generic ingredients, for example, 'meat' and 'plant'. As such, I wanted a place which could compact recipes players have tried in real life in one place so others can enjoy the dishes they're familiar with in-game.
 
-The site has full CRUD functionality to allow creation, reading, updating & deletion.
+The site has full CRUD functionality to allow creation, reading, updating & deletion of recipes and interactions.
 
 ## **Scope**
 
 ## User Stories
 
-The User Stories and website features are mapped out in GitHub Projects for this repository using the Kanban board format. with priority labels and mapping to milestones, which were then split into the sprints detailed below. Almost all were successfully implemented, with those unfinished documented at the start of the Future Features section of this ReadMe. 
+The User Stories and website features are mapped out in GitHub Projects for this repository using the Kanban board format. with priority labels and mapping to milestones, which were then split into the sprints detailed below. Almost all were successfully implemented, with those unfinished noted within their respective sprints and documented at the start of the Future Features section of this ReadMe. 
 
 The user stories were split into six sprints across three weeks, with the fourth week being tidy-up:
 
 ## Sprint One - Main - Week One
 The first step was planning & getting the general setup of the site's navbar across pages, display of the homepage and infinite scroll on the homepage up and running.
-<p>
-The user should be able to easily navigate the site, with no awkward refreshes, next/previous page navigation or empty/broken screens while data is being fetched.
 
+Project Goals:
+- Users should be able to see all recipes in one place
+- Users should be able to see how many likes, made marks and comments a recipe has
+- Users should be able to easily navigate the site with clear directions, no awkward refreshes, next/previous page navigation or empty/broken screens while data is being fetched.
+
+User Stories:
 - As a user, I can see the navbar on every page so that I can easily navigate the site
     - navbar displays seemlessly across all pages
 - As a user, I can navigate pages without them refreshing so that I can smoothly navigate between content
@@ -66,14 +70,19 @@ The user should be able to easily navigate the site, with no awkward refreshes, 
     - navbar conditional rendering displays these options when logged-out
 - As a user, I can view all recipes with the newest first so that I can stay up to date with new content as it is added
     - content displays in descending order of most recent first
+- As a user, I can see how many times a recipe has been made, and how many likes & comments it has, to see how popular it is with the community
+    - the counts for these all display below the recipe
 - As a user, I can endlessly scroll through content so that I can keep viewing without having to page refresh by navigating pages
     - infinite scroll implemented
 
 ## Sprint Two - Authentication - Week Two - One Day
 Second, I focussed on user authentication regarding account creation and access tokens, with content restrictions based on whether a user is logged in.
-<p>
-Users should be able to create accounts and remain logged in once they have done so for a reasonable period so they are not continuously forced to log back in while they are still browsing the site.
 
+Project Goals:
+- Users should be able to create accounts and remain logged in once they have done so for a reasonable period so they are not continuously forced to log back in while they are still browsing the site.
+- Users should be able to easily know if they are logged-in or not
+
+User Stories:
 - As a new user, I can create an account so I can access the features restricted to signed-in users
     - sign-up functionality allows users to create an account
 - As a user, I can log in so that I can view/use the features restricted to signed-in users
@@ -86,19 +95,31 @@ Users should be able to create accounts and remain logged in once they have done
 
 ## Sprint Three - Creating & Liking recipes - Week Two - Three Days
 With user authentication working, I moved to recipe creation and liking, as these are both available from the homepage.
-<p>
+
 An essential experience for users of any blog site is interaction with the recipes, so the ability to like them provides both a positive feedback interaction and a way to revisit their favourite recipes.
 
+Project Goals:
+- Users should be able to create content to share with the community
+- Users should be able to interact with others' content
+
+User Stories:
 - As a logged-in user I can create new recipe posts so that I can share them with other users
     - create recipe page allows users to create recipes and immediately publish them
 - As a logged-in user, I can like recipes/mark them as made so that I can give positive feedback and view them easily again later
     - like/made functionality below each recipe allows users to like them from the main pages, and the individual recipe pages
+    - the viewing function of this story was finalised in Sprint Five with the creation of the relevant pages
 
 ## Sprint Four - Individual Recipe pages - Week Two - Three Days
 This sprint focussed on leaving and displaying comments and providing functionality to edit/delete comments and edit/delete recipes if the user is the recipe's owner.
-<p>
+
 This allows users to further interact with creators and see how others have enjoyed (or not) their recipes.
 
+Project Goals:
+- Users should be able to view individual recipes away from the full list
+- Users should be able to comment on recipes, if logged-in, and view others' comments
+- Users should be able to edit/delete their own recipes and comments
+
+User Stories:
 - As a user, I can navigate to individual recipes so that I can see details such as ingredients, method and comments left by other users
     - users can click the username, recipe image or comments icon to navigate to the recipe's individual page
 - As a user, I can see when a comment was left so that I can see how popular the recipe currently is
@@ -110,11 +131,17 @@ This allows users to further interact with creators and see how others have enjo
 
 ## Sprint Five - Favourites & Made pages, Search & Popular Component - Week Three - Three Days
 This sprint was split in two:
-<p>
-First, displaying favourited and made recipes on their respective pages and creating the popular recipes component
-<p>
-Second, adding a search bar to the pages to allow users to search by creator or recipe name
 
+- First, displaying favourited and made recipes on their respective pages and creating the popular recipes component
+
+- Second, adding a search bar to the pages to allow users to search by creator or recipe name
+
+Project Goals:
+- Users should be able to see a list of recipes they have interacted with (liked/marked as made)
+- Users should be able to search for content using keywords
+- Users should be able to see the most popular content on the site
+
+User Stories:
 - As a logged-in user, I can view recipes I have liked so that I can easily come back to them
     - favourites page filters the site's recipes by those the user has liked
 - As a logged-in user, I can view recipes I have made so that I can easily come back to them
@@ -123,7 +150,7 @@ Second, adding a search bar to the pages to allow users to search by creator or 
     - following page filters the site's recipes by those from users the user follows
 
 - As a user, I can search recipes by specific keywords/users so that I can easily find what I am looking for
-    - searchbar implemented with a timer to prevent fetch requests being sent after each keystroke
+    - searchbar implemented with a timer to prevent requests being sent after each keystroke
     - the searchbar allows users to search by username and content keywords
 
 - As a user, I can view the most followed users so I can easily navigate to their profile -- this was changed to be the most liked recipes as it felt more relevant to the content of the website as liking recipes would likely be more frequent than following users
@@ -132,6 +159,11 @@ Second, adding a search bar to the pages to allow users to search by creator or 
 ## Sprint Six - Profiles - Week Three - Three Days
 The final main sprint was user profiles, including editing functionality for the user's profile and ensuring relevant information displays when viewing others' profiles.
 
+Project Goals:
+- Users should be able to view others' profiles, stats and follow/unfollow them
+- Users should be able to view their own profile and edit it
+
+User Stories:
 - As a user, I can view others' profiles so that I can see their posts, liked content and more
     - a user can navigate to other users' profiles and see recipes
 - As a user, I can view a user's  likes & following/followed counts on their profiles so that I can easily browse their content and find new content
@@ -143,7 +175,7 @@ The final main sprint was user profiles, including editing functionality for the
     - users can navigate to the Following page to narrow results by creators they are following
 - As a logged-in user, I can edit my profile so that I can update my public details
     - burger icon on user's profile allows editing of bio
-- As a user, I can edit my username & password so that I can keep them relevant and secure
+- As a logged-in user, I can edit my username & password so that I can keep them relevant and secure
     - burger icon on user's profile allows editing of username & password
 
 Following the main sprints, Week Four focused on tidying up, final testing and removing unnecessary/unused code.
@@ -287,7 +319,7 @@ Available on the user's profile when logged-in via a burger icon. Users can edit
 
 ![Edit Profile Burger](src/docs/ProfileBurger.png)
 
-Edit Profile Page - prefilled with current bio (if applicable) and profile image
+Edit Profile Page - prefilled with current bio (if applicable) and profile image (default of Blog's logo image if not previously changed)
 
 ![Edit Profile Page](src/docs/EditProfile.png)
 
@@ -368,6 +400,8 @@ Further Features:
 - Delete confirmation modal to prevent accidental deletion of recipes/comments
 
 - Option to delete profile
+
+- Categorisation of recipes with an option to filter recipes by category - this would become increasingly useful as the content volume of the site increases, although the current searchbar functionality does help
 
 ## **Technologies**
 

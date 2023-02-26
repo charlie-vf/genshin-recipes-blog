@@ -7,8 +7,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { CurrentUserProvider } from './contexts/CurrentUserContext';
 import { ProfileDataProvider } from './contexts/ProfileDataContext';
 
-// testing removal of <React.StrictMode></React.StrictMode>
-
 ReactDOM.render(
   <Router>
     <CurrentUserProvider>

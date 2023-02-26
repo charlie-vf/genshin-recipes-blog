@@ -1,14 +1,12 @@
-/* Form will be changed at a later stage - this is just to get it up and running */
-
 .Row {
     height: calc(100vh - 81px);
 }
 
 .Input {
     background: #ffffff;
+    border-radius: 20px;
     border: 1px solid #f0f1f9;
     box-sizing: border-box;
-    border-radius: 2px;
     color: #7177a1;
     text-align: center;
     padding: 10px;
@@ -33,7 +31,7 @@
 }
 
 .Link span {
-    color: #ff9254;
+    color: #b932ef;
 }
 
 .Container {
