@@ -52,20 +52,21 @@ The site has full CRUD functionality to allow creation, reading, updating & dele
 
 The User Stories and website features are mapped out in GitHub Projects for this repository using the Kanban board format. with priority labels and mapping to milestones, which were then split into the sprints detailed below. Almost all were successfully implemented, with those unfinished noted within their respective sprints and documented at the start of the Future Features section of this ReadMe. 
 
-The user stories were split into six sprints across three weeks, with the fourth week being tidy-up:
+The user stories were split into six sprints across three weeks, with the fourth week being tidy-up. The site objective is segmented into Project Goals which are detailed within each sprint, below:
 
-## Sprint One - Main - Week One
-The first step was planning & getting the general setup of the site's navbar across pages, display of the homepage and infinite scroll on the homepage up and running.
+## Sprint One - Main, Routing & Navigation - Week One
+The first step was planning & getting the general setup of the site's navbar across pages, functioning links, display of the homepage and infinite scroll on the homepage up and running.
 
 Project Goals:
 - Users should be able to see all recipes in one place
-- Users should be able to see how many likes, made marks and comments a recipe has
+- Users should be able to see how many likes, made marks and comments a recipe has without having to navigate to its individual page
 - Users should be able to easily navigate the site with clear directions, no awkward refreshes, next/previous page navigation or empty/broken screens while data is being fetched.
 
 User Stories:
 - As a user, I can see the navbar on every page so that I can easily navigate the site
-    - navbar displays seemlessly across all pages
-- As a user, I can navigate pages without them refreshing so that I can smoothly navigate between content
+    - navbar displays seamlessly across all pages
+- As a user I can seamlessly navigate between pages so that I can fully enjoy all the content of the site
+    - there are no broken links in the site
 - As a logged-out user, I can view sign-up/login options so that I can perform those actions and view more of the site's content
     - navbar conditional rendering displays these options when logged-out
 - As a user, I can view all recipes with the newest first so that I can stay up to date with new content as it is added
@@ -93,7 +94,7 @@ User Stories:
 - As a user, I can remain logged in so that my experience is not interrupted
     - JWT access tokens allow the user to remain logged in
 
-## Sprint Three - Creating & Liking recipes - Week Two - Three Days
+## Sprint Three - Creating & Liking/Making recipes - Week Two - Three Days
 With user authentication working, I moved to recipe creation and liking, as these are both available from the homepage.
 
 An essential experience for users of any blog site is interaction with the recipes, so the ability to like them provides both a positive feedback interaction and a way to revisit their favourite recipes.
@@ -122,6 +123,7 @@ Project Goals:
 User Stories:
 - As a user, I can navigate to individual recipes so that I can see details such as ingredients, method and comments left by other users
     - users can click the username, recipe image or comments icon to navigate to the recipe's individual page
+- As a logged-in user, I can leave comments on recipes so that I can interact with the recipe's owner and leave feedback.
 - As a user, I can see when a comment was left so that I can see how popular the recipe currently is
     - comment date is displayed next to the username for a comment
 - As a logged-in user, I can edit/delete my comments so that I can control my interaction with the recipe
@@ -129,7 +131,7 @@ User Stories:
 - As a logged-in user, I can edit/delete my recipes from their individual pages so that I can control my post after creation
     - burger icon allows users to edit/delete
 
-## Sprint Five - Favourites & Made pages, Search & Popular Component - Week Three - Three Days
+## Sprint Five - Favourites, Following & Made pages, Search & Popular Component - Week Three - Three Days
 This sprint was split in two:
 
 - First, displaying favourited and made recipes on their respective pages and creating the popular recipes component
@@ -138,6 +140,7 @@ This sprint was split in two:
 
 Project Goals:
 - Users should be able to see a list of recipes they have interacted with (liked/marked as made)
+- Users should be able to see a list of recipes by users they follow
 - Users should be able to search for content using keywords
 - Users should be able to see the most popular content on the site
 
@@ -164,11 +167,11 @@ Project Goals:
 - Users should be able to view their own profile and edit it
 
 User Stories:
-- As a user, I can view others' profiles so that I can see their posts, liked content and more
+- As a user, I can view others' profiles so that I can see their posts and more
     - a user can navigate to other users' profiles and see recipes
-- As a user, I can view a user's  likes & following/followed counts on their profiles so that I can easily browse their content and find new content
+- As a user, I can view a user's  likes & following/followed counts on their profiles so that I can easily browse their content and see how active they are in the community
     - users can view another user's following & followed counts
-    - other functionality not fully implemented - see Future Features
+    - some functionality not fully implemented - see Future Features
 - As a user, I can follow/unfollow other users so that I can easily find my favourite creators and narrow results by them
     - follow/unfollow button available on user profiles
     - auto-updates user stats
@@ -229,6 +232,10 @@ The background for all pages is aliceblue, a white tinted with blue which provid
 
 *Navbar*
 
+User Story: As a user, I can see the navbar on every page so that I can easily navigate the site
+
+User Story: As a user, I can see if I am logged in or not so that I can log-in/sign-up if required
+
 The NavBar features on every page of the site and provides the user with easy navigation to:
 
 - The Home Page via the Site Logo
@@ -246,18 +253,38 @@ If the user is logged-in:
 
 If the user is logged out:
 
+User Story: As a logged-out user, I can view sign-up/login options so that I can perform those actions and view more of the site's content
+
 ![Nav Bar Logged Out](src/docs/NavBarOut.png)
 
 - Sign In button
 - Sign Up button
 
+*SearchBar*
+
+Allows users to search for recipes by keyword
+
+User Story: As a user, I can search recipes by specific keywords/users so that I can easily find what I am looking for
+
+![Searchbar](src/docs/Searchbar.png)
+
 *Home Page*
+
+User Story: As a user, I can view all recipes with the newest first so that I can stay up to date with new content as it is added
+
+User Story: As a user, I can view the most followed users so I can easily navigate to their profile -- this was changed to be the most liked recipes as it felt more relevant to the content of the website as liking recipes would likely be more frequent than following users
 
 Displays all recipes posted to the site in order of most recently created, with a reusable component displaying the most liked recipes, which features on all pages except the Create Recipe page and Sign In/Up.
 
 ![Home Page](src/docs/HomePage.png)
 
 *Following, Favourites & Made Pages*
+
+User Story: As a logged-in user, I can view recipes I have liked so that I can easily come back to them
+
+User Story: As a logged-in user, I can view recipes I have made so that I can easily come back to them
+
+User Story: As a logged-in user, I can filter recipes by users I follow so I can see content from my favourite creators
 
 Same layout as home page, filtered to display relevant content.
 
@@ -269,9 +296,23 @@ In order:
 
 *Create Recipe Page*
 
+User Story: As a logged-in user I can create new recipe posts so that I can share them with other users
+
 Contains fields to add an image, recipe title, ingredients & method.
 
 ![Create Recipe Page](src/docs/CreateRecipe.png)
+
+*Edit Recipe Page*
+
+User Story: As a logged-in user, I can edit/delete my recipes from their individual pages so that I can control my post after creation
+
+Available on recipes the logged-in user owns via a burger icon in the top right which presents options to edit & delete.
+
+![Recipe Burger](src/docs/RecipeBurger.png)
+
+Edit page is prefilled with the recipe's current contents to make editing easier.
+
+![Edit Recipe Page](src/docs/EditRecipe.png)
 
 *Profile Page*
 
@@ -283,9 +324,13 @@ Own Profile Page:
 
 Other User's Profile Page:
 
+User Story: As a user, I can view others' profiles so that I can see their posts and more
+
 ![Other's Profile Pages](src/docs/ProfileOthers.png)
 
 *Sign In Page*
+
+User Story: As a user, I can log in so that I can view/use the features restricted to signed-in users
 
 With a link to the sign-up page if the user does not already have an account.
 
@@ -296,6 +341,8 @@ Error message displayed if incorrect credentials entered.
 ![Incorrect Credentials](src/docs/IncorrectCredentials.png)
 
 *Sign Up Page*
+
+User Story: As a new user, I can create an account so I can access the features restricted to signed-in users
 
 With a link to the sign-in page if the user already has an account.
 
@@ -321,21 +368,49 @@ Available on the user's profile when logged-in via a burger icon. Users can edit
 
 Edit Profile Page - prefilled with current bio (if applicable) and profile image (default of Blog's logo image if not previously changed)
 
+User Story: As a logged-in user, I can edit my profile so that I can update my public details
+
 ![Edit Profile Page](src/docs/EditProfile.png)
 
 Change Username Page - prefilled with current username
+
+User Story: As a logged-in user, I can edit my username & password so that I can keep them relevant and secure
 
 ![Change Username Page](src/docs/ChangeUsername.png)
 
 Change Password Page
 
+User Story: As a logged-in user, I can edit my username & password so that I can keep them relevant and secure
+
 ![Change Password Page](src/docs/ChangePassword.png)
+
+*Liking, Marking as Made & Commenting*
+
+User Story: As a logged-in user, I can like recipes/mark them as made so that I can give positive feedback and view them easily again later
+
+User Story: As a logged-in user, I can leave comments on recipes so that I can interact with the recipe's owner and leave feedback.
+
+Recipes can be liked and marked as made (& reverse) from both the main pages and the individual recipe pages. Comments can be posted within the individual recipe pages.
+
+![Recipe Interactions](src/docs/RecipeInteractions.png)
+
+*Editing Comments*
+
+User Story: As a logged-in user, I can edit/delete my comments so that I can control my interaction with the recipe
+
+Logged-in users can edit & delete their comments via a burger icon next to their comment
+
+![Edit Comments Burger](src/docs/CommentsBurger.png)
+
+Edit option will prefill with the current comment content.
+
+![Edit Comments](src/docs/EditComment.png)
 
 *No Results*
 
 Displays if there are no results, e.g., if a user navigates to 'Following' but is yet to follow a user, or types an invalid name/word into the searchbar.
 
-React routing allows the text under the image to be relevant to the page the user is viewing.
+React routing messages allows the text under the image to be relevant to the page the user is viewing.
 
 ![No Results Page](src/docs/NoResultsPage.png)
 

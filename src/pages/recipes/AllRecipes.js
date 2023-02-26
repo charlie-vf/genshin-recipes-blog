@@ -19,7 +19,7 @@ import PopularRecipes from "./PopularRecipes";
 
 function AllRecipes({ message, filter = '' }) {
 
-    // Home page displaying All Recipes from which other pages (following, favourites etc.)
+    // Home page displaying All Recipes from which other related pages (following, favourites, made)
     // build from
 
     const [recipes, setRecipes] = useState({ results: [] });
