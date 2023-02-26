@@ -32,7 +32,8 @@ Repository for [API](https://github.com/charlie-vf/genshin-recipes-blog-api)
 ## **Introduction**
 
 The Genshin Recipes Blog was created for my fifth project in Code Institute's Full Stack Software Development Course.
-The objective of this site was to provide players of miHoYo's Genshin Impact with a place to share recipes inspired by those you can craft in-game within a community atmosphere where they can easily interact with content and personalise their experience.
+
+The objective of this site was to provide players of miHoYo's Genshin Impact with a place to share recipes inspired by those you can craft in-game within a community atmosphere where they can easily interact with content and personalise their experience. All users should be able to view the recipes posted to the site and other user profiles. Users should be able to create an account, whereby they can publish recipes; like, mark as made & comment on recipes, and edit their own profiles.
 
 Although aimed at the game's player base, it is largely a Japanese/Chinese inspired recipes blog which is suitable for anybody who is looking for inspiration in these areas.
 
@@ -157,7 +158,8 @@ User Stories:
     - the searchbar allows users to search by username and content keywords
 
 - As a user, I can view the most followed users so I can easily navigate to their profile -- this was changed to be the most liked recipes as it felt more relevant to the content of the website as liking recipes would likely be more frequent than following users
-    - popular recipes component provides access to the community's favourite recipes & displays the number of likes
+    - Updated User Story: As a user, I can view the most popular recipes so I can easily navigate to the community's favourite recipes
+        - popular recipes component provides access to the community's favourite recipes & displays the number of likes
 
 ## Sprint Six - Profiles - Week Three - Three Days
 The final main sprint was user profiles, including editing functionality for the user's profile and ensuring relevant information displays when viewing others' profiles.
@@ -272,7 +274,7 @@ User Story: As a user, I can search recipes by specific keywords/users so that I
 
 User Story: As a user, I can view all recipes with the newest first so that I can stay up to date with new content as it is added
 
-User Story: As a user, I can view the most followed users so I can easily navigate to their profile -- this was changed to be the most liked recipes as it felt more relevant to the content of the website as liking recipes would likely be more frequent than following users
+User Story: As a user, I can view the most popular recipes so I can easily navigate to the community's favourite recipes
 
 Displays all recipes posted to the site in order of most recently created, with a reusable component displaying the most liked recipes, which features on all pages except the Create Recipe page and Sign In/Up.
 
@@ -390,7 +392,11 @@ User Story: As a logged-in user, I can like recipes/mark them as made so that I 
 
 User Story: As a logged-in user, I can leave comments on recipes so that I can interact with the recipe's owner and leave feedback.
 
-Recipes can be liked and marked as made (& reverse) from both the main pages and the individual recipe pages. Comments can be posted within the individual recipe pages.
+Recipes can be liked and marked as made (& reverse) from both the main pages and the individual recipe pages. Comments can be posted within the individual recipe pages. The counts for all three display next to their respective icons.
+
+The comments list also features the infinite scroll functionality so users do not have to navigate to a new page to view more comments.
+
+The 'no comments' text displays differently based on whether the user is logged in or not.
 
 ![Recipe Interactions](src/docs/RecipeInteractions.png)
 
@@ -408,7 +414,7 @@ Edit option will prefill with the current comment content.
 
 *No Results*
 
-Displays if there are no results, e.g., if a user navigates to 'Following' but is yet to follow a user, or types an invalid name/word into the searchbar.
+Displays if there are no results, e.g., if a user navigates to 'Following' but is yet to follow a user, or types an invalid keyword into the searchbar.
 
 React routing messages allows the text under the image to be relevant to the page the user is viewing.
 
@@ -417,22 +423,21 @@ React routing messages allows the text under the image to be relevant to the pag
 
 ## **React**
 
-React is an optimal library for improving user experience as it allows for real-time updating of website content across a range of components, without the need for page refresh.
+React is an optimal library for improving user experience as it allows for fast, real-time updating of website content through user interactions across a range of components, without the need for page refresh or experiencing unfavourable update times.
 
 In the case of this website:
 
+- When a user creates a profile, they are immediately able to sign-in via redirection to the sign-in page and thus gain access to the site's full functionality
 - When a user follows a profile, this is immediately apparent in their user stats and the follow/unfollow button changes accordingly
 - When a user likes or marks a recipe as made, the relevant icon immediately changes and the count increases to reflect the user's actions
     - The same is true for unliking/unmarking as made
-- When a user comments on a recipe, the comment appears instantly below the recipe
+- When a user comments on a recipe, the comment appears instantly below the recipe and the count increases
     - When a user edits/deletes a comment, this is immediately reflected under the recipe
 - When a user creates a new recipe, they will automatically be redirected to the homepage with their new recipe displaying
 - When a user edits their bio, this change is automatic
-- All creation and update times display real-time data
+- All creation and update times display real-time data in a readable format
 
 While data is loading, the user will see a spinner (displayed using an Asset) to notify them that content is on its way to their screen.
-
-The Popular Recipes component remains mounted while navigating through pages which branch from AllRecipes.js and thus always displays, even while other content is loading.
 
 
 ## *Components*
@@ -447,6 +452,8 @@ As there are three areas which utilise edit and/or delete functionality (user's 
 
 The Avatar component is used both for displaying the User's profile photo on various components (i.e., recipes, comments, profile page) and for the icon in the Popular Recipes component. As such, I created a generic component for the Avatar which could be customised to display the relevant image.
 
+The Popular Recipes component is used both on the AllRecipes.js page and the pages which filter from it, as well as the profile page, and was thus created in its own files to allow it to be imported where necessary.
+
 
 ## **Future Features**
 
@@ -456,7 +463,7 @@ These three were not implemented in this release due to time constraints created
 - Filter favourites page by recipes the user has tried, instead of those being displayed as a separate page.
 - User stats (followers & following) when clicked navigate to the relevant content
 
-I believe these features would improve the user experience of this site:
+I believe these features would improve the user experience of this site for the following reasons:
 
 - the first for viewers of others' recipes and the owners of the recipes themselves as it would provide invaluable feedback on the reception of content amongst site users
 - the second as it would be less clunky than having two different pages for the content
@@ -488,14 +495,23 @@ Languages:
 
 Frameworks etc.:
 
-- Django/allauth
-- Bootstrap - further CSS package for design as this works optimally with React & JSX
-- Cloudinary - image hosting as Django does not store images long-term by default
-- ElephantSQL - database hosting
+Front-End:
+
+- react-bootstrap - allows use of Bootstrap CSS package as this works optimally with React & JSX
+- React.js - user interactivity
 - GitHub - website hosting
 - Git - version control
 - GitPod - development platform
 - Heroku - deployed website host
+
+Back-End:
+- Django REST framework/allauth
+- Cloudinary - image hosting as Django does not store images long-term by default
+- ElephantSQL - database hosting
+- Python - efficient abstraction
+- Pillow - imageField
+- Gunicorn - corsheaders
+- SimpleJWT - access tokens to maintain login state
 
 ## **Testing**
 
@@ -509,7 +525,7 @@ HTML Validator: flagged trailing slashes and, once removed, passed through W3C N
 
 ![HTML Validator](src/docs/HTMLValidator.png)
 
-JavaScript Validator: after fixing missing semicolons and misleading line breaks in conditionals, all JavaScript code passed with no warnings.
+JavaScript Validator: after fixing missing semicolons and misleading line breaks in conditionals, all JavaScript files passed through JSHint with no warnings.
 
 Lighthouse Report: 
 
@@ -524,7 +540,7 @@ Lighthouse Report:
 - Best Practices: secure connections & JavaScript vulnerabilities
     - Good
 
-- SEO (Search Engine Optimisation): searchability
+- SEO: searchability
     - Good
 
 ![Lighthouse Report](src/docs/LighthouseReport.png)
@@ -533,7 +549,7 @@ Lighthouse Report:
 
 The site was tested on Google Chrome, Microsoft Edge & Safari and functioned normally.
 
-The site was tested on iPhone and functioned normally.
+The site was tested on iPhone and other devices using DevTools and functioned normally.
 
 ### **Manual**
 
@@ -542,7 +558,8 @@ All site functionality was repeatedly and rigorously tested throughout productio
 1. NavBar/Main Pages
 
 - All NavBar links tested to ensure they navigated to the correct pages, which initially displayed placeholder text
-- If pages have no associated content, they display the noresults asset
+- If pages exist but have no associated content, they display the noresults asset
+- If a page does not exist, it displays the text 'Page Not Found!'
 
 2. Authentication restrictions
 
@@ -609,6 +626,14 @@ To clone this repo:
 - Beneath the repository name, click 'Code' and copy the clone HTTPS
 - Open your preferred IDE & navigate into the working directory you wish to clone into
 - Type 'git clone', paste the copied HTTPS & press enter
+
+To deploy the workspace:
+
+- git add .
+- git commit -m 'Your initial commit message'
+- git push
+
+    These steps must be completed frequently with relevant commit messages to ensure GitHub has the most recent version of your workspace
 
 Heroku Deployment Steps:
 
