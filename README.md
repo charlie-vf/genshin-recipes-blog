@@ -33,8 +33,10 @@ Repository for [API](https://github.com/charlie-vf/genshin-recipes-blog-api)
 
 This Recipes Blog was created for my fifth project in Code Institute's Full Stack Software Development Course.
 The objective of this site was to provide players of miHoYo's Genshin Impact with a place to share recipes inspired by those you can craft in-game within a community atmosphere.
-<p>
+
 Although aimed at the game's player base, it is largely a Japanese/Chinese inspired recipes blog which is suitable for anybody who is looking for inspiration in these areas.
+
+This project uses a combination of HTML, CSS, JavaScript, React.js, Bootstrap.js & Django REST framework.
 
 ## **UX**
 
@@ -122,6 +124,7 @@ Second, adding a search bar to the pages to allow users to search by creator or 
 
 - As a user, I can search recipes by specific keywords/users so that I can easily find what I am looking for
     - searchbar implemented with a timer to prevent fetch requests being sent after each keystroke
+    - the searchbar allows users to search by username and content keywords
 
 - As a user, I can view the most followed users so I can easily navigate to their profile -- this was changed to be the most liked recipes as it felt more relevant to the content of the website as liking recipes would likely be more frequent than following users
     - popular recipes component provides access to the community's favourite recipes & displays the number of likes
@@ -132,10 +135,12 @@ The final main sprint was user profiles, including editing functionality for the
 - As a user, I can view others' profiles so that I can see their posts, liked content and more
     - a user can navigate to other users' profiles and see recipes
 - As a user, I can view a user's  likes & following/followed counts on their profiles so that I can easily browse their content and find new content
-    - not fully implemented - see Future Features
+    - users can view another user's following & followed counts
+    - other functionality not fully implemented - see Future Features
 - As a user, I can follow/unfollow other users so that I can easily find my favourite creators and narrow results by them
     - follow/unfollow button available on user profiles
     - auto-updates user stats
+    - users can navigate to the Following page to narrow results by creators they are following
 - As a logged-in user, I can edit my profile so that I can update my public details
     - burger icon on user's profile allows editing of bio
 - As a user, I can edit my username & password so that I can keep them relevant and secure
@@ -158,7 +163,7 @@ The following diagram details how the site's main pages all link together for lo
 
 ## **Skeleton**
 
-All main pages follow the same general layout, bar the Create Recipe page. The layout is simple so all content is easily viewable for all users.
+All main pages follow the same general layout. The layout is simple so all content is easily viewable for all users.
 
 Home, Following, Favourites, Made & Profile (for profile, recipes display is changed to profile content)
 
@@ -268,7 +273,11 @@ Error messages
 
 Error messages are displayed if user input is invalid, for example:
 
+Attempting to submit with empty fields:
+
 ![Sign Up Blank Fields](src/docs/SignUpBlank.png)
+
+Attempting to submit with insufficient password length:
 
 ![Sign Up Password Short](src/docs/SignUpShort.png)
 
@@ -278,7 +287,7 @@ Available on the user's profile when logged-in via a burger icon. Users can edit
 
 ![Edit Profile Burger](src/docs/ProfileBurger.png)
 
-Edit Profile Page
+Edit Profile Page - prefilled with current bio (if applicable) and profile image
 
 ![Edit Profile Page](src/docs/EditProfile.png)
 
@@ -508,9 +517,6 @@ Heroku Deployment Steps:
 - [Google Fonts](https://fonts.google.com/) for Montserrat font
 - [FontAwesome](https://fontawesome.com/) for icons
 - [LucidChart](https://lucid.app/) for Wireframes sketches
-
-- Slack for troubleshooting help
-- Stack Overflow for further troubleshooting help
 
 - Code Institute Walkthrough project for helping understand how everything works
 - Slack for troubleshooting help
