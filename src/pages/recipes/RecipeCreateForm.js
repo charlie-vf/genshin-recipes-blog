@@ -70,7 +70,6 @@ function RecipeCreateForm() {
             const { data } = await axiosReq.post("/recipes/", formData);
             history.push(`/recipes/${data.id}`);
         } catch (err) {
-            // console.log(err)
             if (err.response?.status !== 401) {
                 setErrors(err.response?.data);
             }

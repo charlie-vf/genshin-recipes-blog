@@ -39,7 +39,7 @@ function RecipePage(props) {
                 setComments(comments);
                 setHasLoaded(true);
             } catch (err) {
-                // console.log(err)
+
             }
         };
         setHasLoaded(false);

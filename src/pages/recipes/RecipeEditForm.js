@@ -45,7 +45,7 @@ function RecipeEditForm() {
                 is_owner ? setRecipeData({ title, ingredients, method, image })
                     : history.push('/');
             } catch (err) {
-                // console.log(err)
+
             }
         };
         handleMount();

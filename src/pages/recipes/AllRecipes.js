@@ -34,7 +34,7 @@ function AllRecipes({ message, filter = '' }) {
                 setRecipes(data);
                 setHasLoaded(true);
             } catch (err) {
-                // console.log(err)
+
             }
         };
 
