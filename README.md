@@ -316,8 +316,6 @@ In the case of this website:
 
 While data is loading, the user will see a spinner (displayed using an Asset) to notify them that content is on its way to their screen.
 
-The Popular Recipes component remains mounted throughout page navigation and thus always displays, even while other content is loading.
-
 
 ## *Components*
 
@@ -338,7 +336,7 @@ These three were not implemented in this release due to time constraints created
 
 - Ability to leave a rating and review on recipes after marking them as made. This will be viewable on the recipe's page as an additional component.
 - Filter favourites page by recipes the user has tried, instead of those being displayed as a separate page.
-- User stats (likes, followers & following) when clicked navigate to the relevant content
+- User stats (followers & following) when clicked navigate to the relevant content
 
 I believe these features would improve the user experience of this site:
 
@@ -509,5 +507,6 @@ Heroku Deployment Steps:
 - [FontAwesome](https://fontawesome.com/) for icons
 - [LucidChart](https://lucid.app/) for Wireframes sketches
 
+- Code Institute Walkthrough project for helping understand how everything works
 - Slack for troubleshooting help
 - Stack Overflow for further troubleshooting help

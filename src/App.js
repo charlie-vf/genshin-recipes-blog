@@ -11,10 +11,10 @@ import RecipePage from './pages/recipes/RecipePage';
 import AllRecipes from './pages/recipes/AllRecipes';
 import { useCurrentUser } from './contexts/CurrentUserContext';
 import RecipeEditForm from './pages/recipes/RecipeEditForm';
-import ProfilePage from './profiles/ProfilePage';
-import UsernameForm from "./profiles/UsernameForm";
-import UserPasswordForm from "./profiles/UserPasswordForm";
-import ProfileEditForm from "./profiles/ProfileEditForm";
+import ProfilePage from './pages/profiles/ProfilePage';
+import UsernameForm from "./pages/profiles/UsernameForm";
+import UserPasswordForm from "./pages/profiles/UserPasswordForm";
+import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 
 function App() {
 
@@ -108,7 +108,7 @@ function App() {
             render={() => <ProfileEditForm />}
           />
           <Route
-            render={() => <p>Page not found!</p>}
+            render={() => <h2>Page not found!</h2>}
           />
         </Switch>
       </Container>

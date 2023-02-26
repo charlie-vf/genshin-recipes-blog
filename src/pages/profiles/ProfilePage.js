@@ -4,23 +4,23 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
-import Asset from "../components/Asset";
+import Asset from "../../components/Asset";
 
-import styles from "../styles/ProfilePage.module.css";
-import appStyles from "../App.module.css";
-import btnStyles from "../styles/Button.module.css";
+import styles from "../../styles/ProfilePage.module.css";
+import appStyles from "../../App.module.css";
+import btnStyles from "../../styles/Button.module.css";
 
-import { useCurrentUser } from "../contexts/CurrentUserContext";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useParams } from "react-router-dom";
-import { axiosReq } from "../api/axiosDefaults";
-import { useProfileData, useSetProfileData } from "../contexts/ProfileDataContext";
+import { axiosReq } from "../../api/axiosDefaults";
+import { useProfileData, useSetProfileData } from "../../contexts/ProfileDataContext";
 import { Button, Image } from "react-bootstrap";
 import InfiniteScroll from "react-infinite-scroll-component";
-import Recipe from "../pages/recipes/Recipe";
-import NoResults from "../assets/noresults.png";
-import { fetchMoreData } from "../utils/utils";
-import { ProfileEditDropdown } from "../components/EditDeleteDropdown";
-import PopularRecipes from "../pages/recipes/PopularRecipes";
+import Recipe from "../recipes/Recipe";
+import NoResults from "../../assets/noresults.png";
+import { fetchMoreData } from "../../utils/utils";
+import { ProfileEditDropdown } from "../../components/EditDeleteDropdown";
+import PopularRecipes from "../recipes/PopularRecipes";
 
 function ProfilePage() {
     const [hasLoaded, setHasLoaded] = useState(false);

@@ -9,14 +9,14 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
 
-import { axiosReq } from "../api/axiosDefaults";
+import { axiosReq } from "../../api/axiosDefaults";
 import {
     useCurrentUser,
     useSetCurrentUser,
-} from "../contexts/CurrentUserContext";
+} from "../../contexts/CurrentUserContext";
 
-import btnStyles from "../styles/Button.module.css";
-import appStyles from "../App.module.css";
+import btnStyles from "../../styles/Button.module.css";
+import appStyles from "../../App.module.css";
 
 const ProfileEditForm = () => {
     const currentUser = useCurrentUser();
