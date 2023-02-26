@@ -316,6 +316,8 @@ In the case of this website:
 
 While data is loading, the user will see a spinner (displayed using an Asset) to notify them that content is on its way to their screen.
 
+The Popular Recipes component remains mounted while navigating through pages which branch from AllRecipes.js and thus always displays, even while other content is loading.
+
 
 ## *Components*
 
@@ -465,6 +467,10 @@ All site functionality was repeatedly and rigorously tested throughout productio
 
 ## **Issues**
 
+*Note*
+
+The Profiles folder is sitting outside the Pages folder. This was discovered late and attempting to move it into the Pages folder immediately causes numerous issues in the workspace. This is not an issue that causes any problems, but I would like to make note that I am aware of this.
+
 ### Resolved
 
 - Issue whereby a logged-in user could not log out and had to wait for the access token to expire
@@ -507,6 +513,5 @@ Heroku Deployment Steps:
 - [FontAwesome](https://fontawesome.com/) for icons
 - [LucidChart](https://lucid.app/) for Wireframes sketches
 
-- Code Institute Walkthrough project for helping understand how everything works
 - Slack for troubleshooting help
 - Stack Overflow for further troubleshooting help
